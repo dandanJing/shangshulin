@@ -1,0 +1,376 @@
+@charset "utf-8";
+body,dd,dl,dt,h2,h3,h4,li,ol,p,ul{
+    margin:0;
+    padding:0;
+    list-style:none;-webkit-text-size-adjust:none
+}
+
+body{
+    font:12px/1.2 arial,Tahoma,SimSun,sans-serif;
+    color:#333;
+    min-width:1190px;text-rendering:geometricPrecision
+}
+
+a{
+    color:#15c;
+    text-decoration:none;
+    cursor:pointer
+}
+
+a:hover{
+    color:red;
+    text-decoration:underline
+}:focus{
+    outline:0
+}
+
+.arrow{
+    background-image:url(http://img.58cdn.com.cn/ui6/index/topbar.png?v=20120302)!important
+}
+
+#topbar{
+    width:100%;
+    height:27px;
+    background:#f5f5f5;
+    color:#666;
+    font:12px/2 Arial,Tahoma,"宋体";-webkit-text-size-adjust:none;
+    border-bottom:1px solid #ddd;
+    line-height: 27px;
+}
+
+#topbar input,#topbar p,#topbar ul{
+    margin:0;
+    padding:0
+}
+
+#topbar li{
+    list-style:none
+}
+
+#topbar a{
+    text-decoration:none
+}
+
+#topbar a:hover{
+    text-decoration:underline
+}.hc{
+    display:none
+}.sc{
+    display:block
+}
+#topbar input{
+    font-family:Tahoma;
+    font-size:12px
+}
+
+#topbar .w,#topbar .warp{
+    clear:both;line-height:27px
+}
+
+#myfeet p a,#sitemapBox strong a,#topbar .mapfuc a{
+    color:#00c
+}
+
+#topbar a:hover{
+    color:red
+}.bar_left{
+    float:left;
+    word-spacing:1px;
+    padding-left:10px;
+    height:27px
+}.bar_right{
+    float:right
+}.bar_left h2{
+    display:inline;
+    font-weight:500;
+    font-size:14px;
+    color:red;
+    float:left
+}.bar_left .tuan{
+    display:inline-block;
+    position:relative;
+    padding-right:30px
+}
+
+#login,#topbar .haschild{
+    float:left
+}.arrow,.tuan sup{
+    display:block;
+    position:absolute;
+    width:7px;
+    height:4px;
+    overflow:hidden;
+    top:12px
+}.tuan sup{
+    width:26px;
+    height:12px;
+    top:3px;
+    background:url() no-repeat 0 -102px
+}.arrow{
+    background:url() no-repeat 0 -156px
+}.gap{
+    color:#ccc;
+    margin:0 6px;
+    font-family:'宋体';*
+    font-family:Tahoma}
+.hover .hc{
+    display:block;
+    position:absolute;
+    top:28px;zoom:1;
+    border:1px solid #dcdcdc;
+    border-top:0;
+    background:#fff;
+    padding:10px
+}
+
+#topbar .w{
+    background:#f5f5f5;
+    height:27px;
+    border-bottom:1px solid #ddd;
+    position:relative;
+    _border-bottom:0
+}
+
+#topbar .haschild{
+    height:28px;
+    line-height:28px;
+    position:relative;
+    z-index:999
+}
+
+#navlist{
+    float:left;
+    margin-left:30px
+}
+
+#navlist ul li .gap{
+    margin:0;float:left
+}
+
+#navlist ul{
+    color:#585858
+}
+
+#navlist ul li{
+    float:left;
+    height:27px;
+    line-height:27px
+}
+
+#navlist ul li a{
+    color:#585858;
+    padding:0 10px;
+    float:left;
+    position:relative
+}
+
+#navlist ul li a:hover{
+    color:red
+}
+
+#navlist li i.phone{
+    width:9px;
+    height:13px;
+    background:url(http://img.58cdn.com.cn/ui6/index/indexbg.png) no-repeat -26px -34px;
+    display:inline-block;
+    margin-right:5px;
+    float:left;
+    margin-top:7px
+}
+
+#navlist li a i{
+    width:11px;
+    height:11px;
+    background:url(http://img.58cdn.com.cn/ui6/index/indexbg.png) no-repeat;
+    display:inline-block
+}
+
+#navlist li a i.n{
+    position:absolute;
+    background-position:-66px -34px;right:-2px;top:0
+}
+
+#topbar .hover{
+    background:#fff;
+    border-left:solid 1px #dcdadc;
+    border-right:solid 1px #dcdadc;
+    z-index:999;
+    margin:0 -1px
+}
+
+#topbar .hover .arrow{
+    background-position:-7px -156px
+}
+
+.weather{
+    float:left;
+    margin-left:15px;
+    position:relative;
+    word-spacing:0
+}
+
+.wt img{
+    margin:0 8px 0 0;
+    width:19px;
+    height:21px;
+    vertical-align:middle
+}
+.wt em{
+    _zoom:1;
+    font-style:normal
+}
+
+.wt .wTemp{
+    position:relative;
+    top:1px
+}
+
+.today_lv{
+    margin:0 0 0 10px;
+    background:url(http://img.58cdn.com.cn/ui6/index/indexbg.png) no-repeat;
+    padding:0 3px;
+    display:inline-block;
+    _display:inline;
+    _zoom:1;
+    line-height:16px;
+    color:#fff
+}
+
+.today_lv_1{
+    background-position:0 -442px
+}
+
+.today_lv_0{
+    background-position:-56px -442px
+}
+
+.wb{
+    border:1px solid #e4e1e1;
+    position:absolute;
+    left:0;
+    top:27px;
+    z-index:1000;
+    background:#fff;
+    width:470px;
+    line-height:20px;
+    display:none
+}
+
+#header{
+    background:#fff;
+    position:fixed;
+    width:100%;
+    z-index:999;
+    top:100;
+    height:65px;
+    overflow:hidden;
+}
+
+#footer,#headerinside,.morelink{
+    background:#fff;
+    width:1190px;
+    margin:0 auto;
+    clear:both
+}
+
+.cb{
+    border:1px solid #dadbdf;
+    border-top:0;
+    width:1188px;
+    margin:0 auto;
+    clear:both;
+    overflow:hidden;
+    position:relative
+}
+
+#headerinside{
+    height:70px;
+    position:relative;
+    z-index:666;
+    margin-top:5px
+}
+
+#logo{
+    position:absolute;
+    left:0;top:10px
+}
+
+#searchbar{
+    position:absolute;
+    left:407px;
+    top:11px;
+    line-height:26px;
+    overflow:hidden
+}
+
+#searchbar i{
+    font-style:normal
+}
+
+.keyword{
+    color:#c8c8c8
+}
+
+#keyword.keyword2{
+    background-position:0 50px;
+    color:#292929
+}
+
+.search-fix .search-no{
+    display:none;
+    visibility:hidden;
+}
+
+.search-fix #logo img{
+    width:150px;
+    height:40px;
+    margin-top:-4px
+}
+.search-fix #searchbar{
+    left:315px
+}
+
+.hShadow{
+    font-size:0;
+    line-height:0;
+    height:6px;
+    overflow:hidden;
+    background:url(http://img.58cdn.com.cn/ui6/index/indexbg.png) repeat-x 0 -463px;
+    display:none;
+    position:fixed;
+    top:65px;
+    width:100%;
+    z-index:999
+}
+
+.search-fix .hShadow{
+    display:block
+}
+
+.ad_hq,.ad_sj{
+    display:none
+}
+
+.mbox{
+    position:absolute;
+    top:35px;
+    text-align:center;
+    background:#fff;
+    border:1px solid #d1d1d1;
+    z-index:99;
+    padding:5px 0
+}
+
+.mbox ul{
+    overflow:hidden
+}
+
+.mbox ul li{
+    width:192px;
+    float:left;
+    border-left:1px dashed #e5e5e5;
+    margin:0;
+    position:relative;
+    left:-1px;
+    height:181px
+}

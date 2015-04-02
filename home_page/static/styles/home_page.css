@@ -216,6 +216,36 @@ a:hover{
     background-position:-7px -156px
 }
 
+.brandad1190{ 
+    height:50px; 
+    margin:0 auto 10px; 
+    overflow:hidden; 
+    width:1190px; 
+    position:relative;
+}
+        
+.brandad1190 .brandad990 li{ 
+    height:50px;
+}
+
+.brandad1190 img{ 
+    width:1190px; 
+    height:50px;
+}
+
+.brandad990{ 
+    height:50px; 
+    margin:0 auto 10px; 
+    overflow:hidden; 
+    width:990px; 
+    position:relative;
+}
+
+.brandad990 img{
+    width:990px; 
+    height:50px;
+}
+
 #navlist{
     float:left;
     margin-left:30px
@@ -527,10 +557,165 @@ a:hover #fabu{
     position:relative
 }
 
+#page{
+    width: 100%;
+    margin:auto;
+}
 
+#content{
+    width: 1190px;
+    margin: 0 auto;
+}
 
+.first-glance{
+    margin-left:200px;
+    overflow:hidden
+}
 
+.index-slider{
+    margin:0;
+    height: 264px;
+    border-bottom: 1px solid #e6e6e6;
+    overflow: hidden;
+    margin: 0 10px;
+    position: relative;
+}
 
+.loading{
+    background:url(http://img01.taobaocdn.com/tps/i1/T1cKm3XkRpXXXXXXXX-48-48.gif) no-repeat 50% 50%;
+}
+
+.col{
+    float: left;
+    display: inline;
+    zoom:1;
+}
+
+.slider-list{
+    width: 640px; 
+    overflow: hidden; 
+    height: 274px;
+}
+
+.slide-home{
+    position: absolute; 
+    overflow: hidden; 
+    width: 2560px; 
+    -webkit-transition: 0.8s; 
+    transition: 0.8s; 
+    -webkit-transform: translate3d(-640px, 0px, 0px); 
+    -webkit-backface-visibility: hidden; opacity: 1;
+}
+
+.slider-home textarea{
+    display: none;
+}
+
+.item{
+    float: left; 
+    overflow: hidden; 
+    width: 640px; 
+    display: block;
+}
+
+.tab-nav{
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+}
+
+.clearfix{
+    zoom:1;
+}
+
+.tab-nav ul{
+    list-style-type: circle;
+}
+
+.tab-nav li{
+    float: left;
+    width: 11px;
+    height: 11px;
+    text-indent: -9999px;
+    margin-right: 5px;
+    cursor: pointer;
+    background: url(http://gtms01.alicdn.com/tps/i1/T19QDUFd4bXXcCqEQx-66-154.png) no-repeat;
+}
+
+.tab-nav li.selected{
+    background-position: 0 -61px;
+}
+
+.idle-start{
+    width: 288px;
+    position: relative;
+    height: 264;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    text-align: center;
+}
+
+.col{
+    float: left;
+    display: inline;
+    zoom:1;
+}
+
+.extend{
+    height: 120px;
+    background-color: #f4f4f4;
+}
+
+.idle-start .extend .mod{
+    float: left;
+    width: 144px;
+    height: 120px;
+}
+
+.idle-start .extend .mod a{
+    display: block;
+    padding: 23px 0;
+    border:1px solid #efefef;
+    margin-left: 9px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.idle-start .extend .mod a .main-title{
+    display: inline-block;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    background: url(http://gtms03.alicdn.com/tps/i3/TB1Bf4pFVXXXXcvXpXX1ka_.VXX-91-199.png) no-repeat 85px -99px;
+}
+
+.idle-start .extend .mod a .subtitle {
+    display: block;
+    color: #999;
+}
+
+.on-selling{
+    width: 288px;
+    height: 140px;
+}
+
+.on-selling h3 {
+    text-align: left;
+    display: block;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    padding-left: 12px;
+    margin: 0;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
 
 .ad_hq,.ad_sj{
     display:none

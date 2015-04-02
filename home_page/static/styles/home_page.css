@@ -617,6 +617,7 @@ color: #585858;
 
 .index-slider{
     margin:0;
+    width: 640px;
     height: 264px;
     border-bottom: 1px solid #e6e6e6;
     overflow: hidden;

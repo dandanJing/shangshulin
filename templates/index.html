@@ -5,11 +5,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta http-equiv="Content-Language" content="zh-cn"/>
+    <meta name="spm-id" content="2007.1000261">
     <title>尚书林</title>
     <link rel="shortcut icon" href="/static/images/ssl-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/styles/home_page.css">
-    <script src="index.js"></script>
-    <meta name="spm-id" content="2007.1000261">
+    <!--<script type="text/javascript" src="/static/scripts/index.js"></script>
+    <script type="text/javascript">
+        window.onload = function test() {
+            alert("haha");
+        }
+    </script>-->
 </head>
 <body class = "homebody">
     <!--topbar-->
@@ -20,7 +25,7 @@
                 <span id = "ipconfig"></span>
                 <div id = "weather" class="weather" style="display:block;">
                     <span class="wt">
-                        <img src="http://img.58cdn.com.cn/ui6/index/weather/ws_7.jpg" alt="">
+                        <img src="/static/images/ws_7.jpg" alt="">
                         <em>小雨</em>&nbsp;&nbsp;
                         <em class="wTemp">17 ~ 5℃</em>
                     </span>
@@ -46,12 +51,12 @@
     <div id="homeWrap" class="wrapper">
          <div id = "header">
             <div id="headerinside">
-                <a href="http://bj.58.com" target="_self" id="logo" onclick="clickLog('from=sylogo_bj');"><img src="http://img.58cdn.com.cn/ui6/index/logo.gif" alt="中文最大生活信息门户" title="58同城，让生活更简单" width="188" height="50"></a>
+                <a href="http://bj.58.com" target="_self" id="logo" onclick="clickLog('from=sylogo_bj');"><img src="/static/images/logo.gif" alt="中文最大生活信息门户" title="58同城，让生活更简单" width="188" height="50"></a>
                 <div id="1002" class="search-no" style="display:none"> 
                     <a onclick="_gaq.push(['pageTracker._trackEvent', 'home', 'adv_click', '/home/adv/1002/bj']);clickLog('from=home_adv_1002_bj&amp;ToUrl=http://static.58.com/ds/other/weixinExtend/huodong_v7.html?from=indexmini');" style="background-image:url(http://pic2.58.com/ui6/index/mini_mq5000.gif);width:143px;height:46px;" class="embed03" href="http://static.58.com/ds/other/weixinExtend/huodong_v7.html?from=indexmini" rel="nofollow"></a>             
                 </div>
                 <div id="brand_mini_banner" class="search-no" style="display:none">
-                    <a href="http://jing.58.com/adJump?adType=7&amp;target=nTDQTHDKnTDQTHDOrH91THDOrH91THTKnTDksWckP1EdPWNQnWELnjDvrHmKnaYQsHDVniYksHDYnW03njcQPjnLPW0VsHD1nHmvPjD3njbKPH9Kn-qVuT7vni3kTgPCmyOMph-6Ty7_UT7CIZwkrBtf0A-WnB3draOWUvYfUHN3sv7k0jN3svdx0Lw6IA-WsLPYmgwGmztznjDdmv6dUM-dUBdvniqVsgKWsh6YUykKHyPumvFz0ydOrjujivwawH9QmW76ujD1ry7WrHT3rjcOnvu6ujDOujP-PyEduAcvuHnvuHuWnHR-nj9zuhEkuW9vuAuBPWmdrj93mHczmhN" class="embed04" style="background-image:url(http://t2.58cdn.com.cn/brandads/original/n_s12675130727941306016.jpg);"></a>
+                    <a href="http://jing.58.com/adJump?adType=7&amp;target=nTDQTHDKnTDQTHDOrH91THDOrH91THTKnTDksWckP1EdPWNQnWELnjDvrHmKnaYQsHDVniYksHDYnW03njcQPjnLPW0VsHD1nHmvPjD3njbKPH9Kn-qVuT7vni3kTgPCmyOMph-6Ty7_UT7CIZwkrBtf0A-WnB3draOWUvYfUHN3sv7k0jN3svdx0Lw6IA-WsLPYmgwGmztznjDdmv6dUM-dUBdvniqVsgKWsh6YUykKHyPumvFz0ydOrjujivwawH9QmW76ujD1ry7WrHT3rjcOnvu6ujDOujP-PyEduAcvuHnvuHuWnHR-nj9zuhEkuW9vuAuBPWmdrj93mHczmhN" class="embed04" style="background-image:url("/static/images/topbar-1.gif");"></a>
                 </div>
                 <form onsubmit="_gaq.push([&quot;pageTracker._trackEvent&quot;, &quot;home&quot;, &quot;search_top_click&quot;, &quot;/bj/index/&quot;]);var r=true;try{b_query(); r=false;}catch(e){};return r;" action="/sou/" target="_self">
                     <div id="searchbar">
@@ -82,7 +87,7 @@
                     <li><a href="/job.shtml" tongji_tag="index_nav_zhaopin_bj">招聘</a></li>
                     <li><a href="/chuzu/" tongji_tag="index_nav_zufang_bj">租房</a></li>
                     <li><a href="/ershoufang/" tongji_tag="index_nav_ershoufang_bj">二手房</a></li>
-                    <li><a href="anjukejump.shtml" tongji_tag="index_nav_xinfang_bj" onclick="clickLog('from=xfanjuke_home_bj');">新房</a><i style="position:absolute;top:-5px;_top:0;right:0px;"><img src="http://img.58cdn.com.cn/ui6/index/icon_new.gif"></i></li>
+                    <li><a href="anjukejump.shtml" tongji_tag="index_nav_xinfang_bj" onclick="clickLog('from=xfanjuke_home_bj');">新房</a><i style="position:absolute;top:-5px;_top:0;right:0px;"><img src="/static/images/icon_new.gif"></i></li>
                     <li><a href="/ershouche/" tongji_tag="index_nav_ershouche_bj">二手车</a></li>
                     <li><a href="http://che.58.com/" tongji_tag="index_nav_xinche_bj">新车</a></li>
                     <li><a href="sale.shtml" tongji_tag="index_nav_ershousc_bj">二手市场</a></li>
@@ -97,7 +102,7 @@
     </div>
     <div id="page">
         <div id="content" class="idle-index">
-            <div class="lbsear">
+            <div class="lbsear" style="display:none;">
                 <h2>类目导航</h2>
                 <div id="ymenu-side" class="content">
                     <ul class="ym-mainmnu">
@@ -137,7 +142,7 @@
                                     <li class="item">
                                         <div>                            
                                             <a href="http://www.taobao.com/market/2/xyxb.php?spm=2007.1000261.638273021.1.o5iC4w">
-                                                <!-- <img alt="闲鱼" src="http://gtms03.alicdn.com/tps/i3/TB1mtK2HpXXXXaYXFXXYX3C0FXX-640-250.png"> -->
+                                                <img alt="闲鱼" src="http://gtms03.alicdn.com/tps/i3/TB1mtK2HpXXXXaYXFXXYX3C0FXX-640-250.png">
                                             </a>
                                         </div>
                                         <textarea class="hidden data-lazyload" lazy-data="1">     
@@ -146,7 +151,7 @@
                                             </a>;
                                         </textarea>
                                     </li>
-                                    <!-- <li class="item">
+                                    <li class="item">
                                         <div>                            
                                             <a href="http://www.taobao.com/market/car/ershouchepindao.php">
                                                 <img alt="二手车" src="http://gtms02.alicdn.com/tps/i2/TB106n7HpXXXXXNaXXXpO3F0FXX-640-270.jpg">
@@ -157,8 +162,8 @@
                                                 <img alt="二手车" src="http://gtms02.alicdn.com/tps/i2/TB106n7HpXXXXXNaXXXpO3F0FXX-640-270.jpg">
                                             </a>;
                                         </textarea>
-                                    </li> -->
-                                    <!-- <li class="item">
+                                    </li>
+                                    <li class="item">
                                         <div>                            
                                             <a href="http://www.xiami.com/market/music/act/xxmczyg.php">
                                                 <img alt="数娱" src="http://gtms04.alicdn.com/tps/i4/TB1TgnRHpXXXXXgXFXX3PoG0FXX-640-274.jpg">
@@ -181,10 +186,10 @@
                                                 <img alt="天猫盒子" src="http://img02.taobaocdn.com/imgextra/i2/1862759827/TB28BBwcXXXXXcQXXXXXXXXXXXX_!!1862759827.jpg">;
                                             </a>
                                         </textarea>
-                                    </li> -->
+                                    </li>
                                 </div>
                             </ul>
-                            <ul class="tab-nav clearfix">
+                            <!-- <ul class="tab-nav clearfix" id="sliders-num-indicate">
                                 <li class="">
                                     <a href="javascript:void(0);" data-spm-anchor-id="2007.1000261.638273021.5">1</a>
                                 </li>
@@ -197,7 +202,7 @@
                                 <li class="">
                                     <a href="javascript:void(0);" data-spm-anchor-id="2007.1000261.638273021.8">4</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                             <div id="J_optbtn" class="optbtn" style="display: none;">
                                 <a href="javascript:;" target="_self" class="J_Prev prev"><i></i></a>
                                 <a href="javascript:;" target="_self" class="J_Next next"><i></i></a>
@@ -266,7 +271,7 @@
                     <div class="avatar">
                         <img src="/static/images/avatar.png">
                     </div>
-                    <p class="foreword">Hi，tb_1519357<br><strong>你可能感兴趣</strong></p>
+                    <p class="foreword">Hi<br><strong>你可能感兴趣</strong></p>
                     <div class="tag-cloud">
                         <span class="placeholder"></span>
                         <a href="http://s.2.taobao.com/list/list.htm?q=早餐" target="_blank">早餐</a>

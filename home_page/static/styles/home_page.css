@@ -647,11 +647,13 @@ a:hover #fabu{
 }
 
 .idle-start{
-    width: 288px;
+    margin-left: 10px;
+    width: 318px;
     position: relative;
-    height: 264;
+    height: 265px;
     border-left: 1px solid #efefef;
     border-right: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
     text-align: center;
 }
 
@@ -662,22 +664,23 @@ a:hover #fabu{
 }
 
 .extend{
-    height: 120px;
+    height: 70px;
     background-color: #f4f4f4;
 }
 
 .idle-start .extend .mod{
     float: left;
     width: 144px;
-    height: 120px;
+    height: 70px;
+    margin-left: 10px;
 }
 
 .idle-start .extend .mod a{
     display: block;
-    padding: 23px 0;
+    padding: 5px 0;
     border:1px solid #efefef;
     margin-left: 9px;
-    margin-top: 10px;
+    margin-top: 6px;
     text-align: center;
     background-color: #fff;
 }
@@ -698,18 +701,19 @@ a:hover #fabu{
 }
 
 .on-selling{
-    width: 288px;
-    height: 140px;
+    width: 278px;
+    height: 195px;
+    margin-left: 20px;
 }
 
 .on-selling h3 {
     text-align: left;
     display: block;
-    font-size: 16px;
+    font-size: 15px;
     height: 30px;
     line-height: 30px;
-    font-weight: 400;
-    padding-left: 12px;
+    font-weight: 500;
+    padding-left: 8px;
     margin: 0;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
@@ -717,6 +721,87 @@ a:hover #fabu{
     -webkit-margin-end: 0px;
 }
 
+.on-selling li {
+    zoom: 1;
+    padding-bottom: 6px;
+    height: 75px;
+    position: relative;
+}
+
+.on-selling .item-pic{
+    width: 75px;
+    height: 75px;
+    float: left;
+}
+
+.sh-pic{
+    display: table;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.sh-pic a{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.on-selling .item-pic img{
+    max-height: 75px;
+    max-width: 75px;
+}
+
+.on-selling .info{
+    float: left;
+    margin-left: 12px;
+}
+
+h5{
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin:0px;
+    padding: 0px;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-size: 100%;
+}
+
+.on-selling .desc{
+    width: 187px;
+    height:35px;
+    overflow: hidden;
+    margin:0;
+    padding: 0;
+    display: block;
+    text-align: left;
+}
+
+.on-selling .desc a{
+    color: #333;
+    text-decoration:none;
+    cursor: auto;
+}
+
+.price-block {
+    font-family: Verdana;
+    font-size: 12px;
+    text-align: left;
+}
+
+.price-block b{
+    font-weight: 400;
+    font-family: Arial,Verdana;
+    padding-right: 2px;
+    color: #999;
+}
+
+.price em {
+    font-weight: 700;
+    font-size: 14px;
+    color: #f40;
+}
 .ad_hq,.ad_sj{
     display:none
 }

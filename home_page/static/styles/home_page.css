@@ -567,9 +567,52 @@ a:hover #fabu{
     margin: 0 auto;
 }
 
+.lbsear {
+    position: relative;
+    float: left;
+    display: inline;
+    width: 188px;
+    border: 1px solid #f9b38c;
+    background: #fff9f2;
+    margin-right: 6px;
+    margin-top: 10px;
+    padding: 10px 0;
+    height: 232px;
+}
+
+.lbsear h2 {
+    padding: 0 0 0 15px;
+    margin-bottom: 6px;
+    font: 700 16px/22px Arail;
+    color: #333;
+    border-left: 3px solid #e50;
+}
+
+.ym-tab {
+    background: url(http://pic2.58.com/ui7/ershou/index/i_arr_orange.png) no-repeat 175px 13px;
+    float: left;
+    width: 188px;
+    clear: left;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 18px;
+    color: #00c;
+    border-top: none;
+}
+
+.ym-tab .dlb {
+    font-size: 12px;
+    color: #dcdde0;
+}
+
+.ym-tab .dlb a, .current .dlb a {
+font-size: 12px;
+color: #585858;
+}
+
 .first-glance{
     margin-left:200px;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .index-slider{

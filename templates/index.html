@@ -270,38 +270,23 @@
                             <div class="change">
                                 <a href="http://s.2.taobao.com/list/list.htm?divisionId=110100" target="_blank">换一批</a>
                             </div>
+                            {%if book_list %}
                             <ul>
+                                {% for item in book_list%}
                                 <li class="item">
                                     <div class="item-pic">
-                                        <a href="http://2.taobao.com/item.htm?id=44510119962" target="_blank">
-                                            <img class="J_ItemPic" src="http://img.taobaocdn.com/bao/uploaded/i3/TB1HhUjHpXXXXaZXVXXlyZ18XXX_160x160.jpg" title="爱奇艺2的电视盒子">
+                                        <a href="" target="_blank">
+                                            <img class="J_ItemPic" src="/static/images/{{item.itemimageurl}}" title={{item.itemname}}>
                                         </a>
                                     </div>
                                     <p class="item-title">
-                                        <a href="http://2.taobao.com/item.htm?id=44510119962">爱奇艺2的电视盒子</a>
+                                        <a href="">{{item.itemname}}</a>
                                     </p>
                                 </li>
-                                <li class="item">
-                                    <div class="item-pic">
-                                        <a href="http://2.taobao.com/item.htm?id=44510119962" target="_blank">
-                                            <img class="J_ItemPic" src="http://img.taobaocdn.com/bao/uploaded/i3/TB1HhUjHpXXXXaZXVXXlyZ18XXX_160x160.jpg" title="爱奇艺2的电视盒子">
-                                        </a>
-                                    </div>
-                                    <p class="item-title">
-                                        <a href="http://2.taobao.com/item.htm?id=44510119962">爱奇艺2的电视盒子</a>
-                                    </p>
-                                </li>
-                                <li class="item">
-                                    <div class="item-pic">
-                                        <a href="http://2.taobao.com/item.htm?id=44510119962" target="_blank">
-                                            <img class="J_ItemPic" src="http://img.taobaocdn.com/bao/uploaded/i3/TB1HhUjHpXXXXaZXVXXlyZ18XXX_160x160.jpg" title="爱奇艺2的电视盒子">
-                                        </a>
-                                    </div>
-                                    <p class="item-title">
-                                        <a href="http://2.taobao.com/item.htm?id=44510119962">爱奇艺2的电视盒子</a>
-                                    </p>
-                                </li>
+                                {% endfor %}
                             </ul>
+                            {% else %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>

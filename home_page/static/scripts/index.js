@@ -12,12 +12,12 @@ $(document).ready(function(){
     	$(this).siblings().removeAttr("class");
         $(this).toggleClass("selected");
     });
-    t = setInterval("showAuto()", 4000);
+    t = setInterval("showAuto()", 5000);
  	$("#slider-frame").hover(function(){
  		//alert("hover");
  		clearInterval(t)
  	}, function(){
- 		t = setInterval("showAuto()", 4000);
+ 		t = setInterval("showAuto()", 5000);
  	});
 });
 

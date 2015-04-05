@@ -575,9 +575,9 @@ a:hover #fabu{
     border: 1px solid #f9b38c;
     background: #fff9f2;
     margin-right: 6px;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 10px 0;
-    height: 232px;
+    height: 242px;
 }
 
 .lbsear h2 {
@@ -589,25 +589,25 @@ a:hover #fabu{
 }
 
 .ym-tab {
-    background: url(http://pic2.58.com/ui7/ershou/index/i_arr_orange.png) no-repeat 175px 13px;
+    background: url(http://pic2.58.com/ui7/ershou/index/i_arr_orange.png) no-repeat 170px 11px;
     float: left;
     width: 188px;
     clear: left;
     height: 30px;
     line-height: 30px;
-    text-indent: 18px;
+    text-indent: 78px;
     color: #00c;
     border-top: none;
 }
 
 .ym-tab .dlb {
-    font-size: 12px;
+    font-size: 15px;
     color: #dcdde0;
 }
 
 .ym-tab .dlb a, .current .dlb a {
-font-size: 12px;
-color: #585858;
+    font-size: 14px;
+    color: #585858;
 }
 
 .first-glance{

@@ -17,7 +17,7 @@ div{
 }
 
 a{
-    color:#15c;
+    color:#000;
     text-decoration:none;
     cursor:pointer
 }
@@ -921,17 +921,17 @@ h5{
 .item_group_first{
     width: 100%;
     height: 232px;
+    margin-top: 10px;
 }
 
 .item_group_first .person-info{
     width: 188px;
-    height: 232px;
+    height: 222px;
     float: left;
     display: inline;
     zoom:1;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     padding-top: 10px;
-    margin-top: 10px;
 }
 
 .item_group_first .person-info .avatar {
@@ -1073,9 +1073,90 @@ h5{
     color: #000;
 }
 
-.item_group_second{
+.ssl_items_list {
     width: 100%;
-    height: 232px;
-    background-color: #0f0;
+    height:800px;
+    float: left;
+    margin-top: 0px;
 }
 
+.ssl-items{
+    width: 100%;
+    height: 510px;   
+}
+
+.items_head{
+    height: 22px;
+    padding: 8px 0;     
+}
+
+.items_body{
+    width: 100%;
+    overflow: hidden;;
+    float: left;
+    margin-left: 10px;
+    border-top: 1px solid #E6E6E6;
+    padding-top: 5px;
+}
+
+.items_body .bd-left-mod{
+    float: left;
+    width: 190px;
+    height: 430px;
+    display: inline;
+}
+
+.items_body .bd-middle-mod{
+    width: 730px;
+    margin: 0;
+    height: 480px;
+    overflow: hidden;
+    float: left;
+    display: inline;
+}
+
+.items_head h2 {
+    font-size: 22px;
+    font-family: "Microsoft Yahei";
+    line-height: 22px;
+    padding-left: 10px;
+    font-weight: 400;
+    border-left: 3px solid #A8D200;
+    text-align: left;
+}
+
+.items_body .bd-left-mod .tag{
+    word-break: keep-all;
+    height: 208px;
+    margin: 15px 0px;
+    overflow: hidden;
+}
+
+.items_body .bd-left-mod .tag a {
+    margin: 0px 15px 0px 0px;
+    line-height: 28px;
+    word-wrap: break-word;
+    white-space: nowrap;
+    color: #333;
+}
+
+.items_body .bd-left-mod .banner a{
+    display: block;
+    height: 190px;
+    width: 190px;
+}
+
+.items_body ul{
+    margin-left: 20px;
+}
+
+.items_body ul li{
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.item .price-block{
+    text-align: right;
+}

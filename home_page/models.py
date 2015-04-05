@@ -23,3 +23,12 @@ class ssl_table(models.Model):
 	itemsnum = models.IntegerField('itemsNum')
 	itemimageurl = models.CharField('itemImageUrl',max_length=200)
 	itemimagetable = models.CharField('itemImageTable',max_length=100)
+
+class ssl_en_table(models.Model):
+	itemid = models.CharField('itemId',max_length=100)
+	itemname = models.CharField('itemName',max_length=100)
+	itemcostprice = models.IntegerField('itemCostPrice')
+	itemprice = models.IntegerField('itemPrice')
+	itemsnum = models.IntegerField('itemsNum')
+	itemimageurl = models.CharField('itemImageUrl',max_length=200)
+	itemimagetable = models.CharField('itemImageTable',max_length=100)

@@ -43,7 +43,7 @@
                     <img class="wide" src="/static/images/topbar.jpg">
                 </a>
             </li>
-        </ul>
+        </ul>ss
     </div>
     <!--homeWrap-->
     <div id="homeWrap" class="wrapper">
@@ -104,10 +104,10 @@
                 <div id="ymenu-side" class="content">
                     <ul class="ym-mainmnu">
                         <li class="ym-tab">
-                            <span class="dlb"><a href="/shouji/">外语天地</a> </span>
+                            <span class="dlb"><a href="#items-en">外语天地</a> </span>
                         </li>
                         <li class="ym-tab">
-                            <span class="dlb"><a href="/diannao/">数物基科</a> </span>
+                            <span class="dlb"><a href="#items-phy">数物基科</a> </span>
                         </li>
                         <li class="ym-tab">
                             <span class="dlb"><a href="/jiadian/">电脑空间</a> </span>
@@ -287,7 +287,59 @@
                     </div>
                 </div>
             </div>
-            <div class="item_group_second">
+            <div class="ssl_items_list">
+                <div class="item_group_en ssl-items" id="items-en">
+                    <div class="items_head">
+                        <h2>外语天地</h2>
+                    </div>
+                    <div class="items_body">
+                        <div class="bd-left-mod">
+                            <div class="tag">
+                                <a href="">biaoqian</a>
+                                <a href="">biaoqian</a>
+                                <a href="">biaoqian</a>
+                            </div>
+                            <div class="banner">
+                                <a href="http://s.2.taobao.com/list/list.htm?spm=2007.1000337.0.0.gGLybz&catid=50100402&st_trust=1&q=%D7%E9%D7%B0&ist=0">
+                                    <img src="http://img02.taobaocdn.com/tps/i2/T1qEOpFg0fXXaf97Qy-190-177.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bd-middle-mod">
+                            {% if ssl_en_list %}
+                            <ul>
+                                {% for item in ssl_en_list %}
+                                <li class="item">
+                                        <div class="item-pic">
+                                            <a href="" target="_blank">
+                                                <img class="J_ItemPic" src="http://shangshulin.oss-cn-beijing.aliyuncs.com/ssl-items/en/{{item.itemimageurl}}" title={{item.itemname}}>
+                                            </a>
+                                        </div>
+                                        <p class="item-title">
+                                            <a href="">{{item.itemname}}</a>
+                                        </p>
+                                        <div class="price-block">
+                                            <p class="price">
+                                                <b>¥</b>
+                                                <em>{{item.itemprice}}</em>
+                                            </p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            {% endif %}
+                        </div>  
+                    </div>
+                    <!-- <img src="http://shangshulin.oss-cn-beijing.aliyuncs.com/ssl-items/en/en1.png"> -->
+                </div>
+                 <div class="item_group_phy ssl-items" id="items-phy">
+                    <div class="items_head">
+                    <h2>数物基科</h2>
+                    </div>
+                    <div class="items_body">
+                    </div>
+                </div>
             </div>
         </div>
 

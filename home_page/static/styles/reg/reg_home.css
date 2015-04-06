@@ -85,7 +85,7 @@ a{
 .regMenu span{
 	display: inline-block;
 	line-height: 35px;
-	padding: 0px;
+	padding: 0px 5px;
 	font-weight: bold;
 }
 
@@ -98,9 +98,16 @@ a{
 	top: 1px;
 	width: 60px;
 	text-decoration: none;
+	padding-left: 30px;
 }
 
-.loginTab{
+.regMenu span.active{
+	background: none repeat scroll 0% 0% #FFF;
+	color: #000;
+	border-bottom: 2px solid #f22;
+}
+
+#loginTab{
 	position: absolute;
 	right: 5px;
 	bottom: 5px;
@@ -110,7 +117,7 @@ a{
 	font-size: 12px;
 }
 
-.loginTab a{
+#loginTab a{
 	color: #00C;
 	display: inline;
 	margin: 0px;
@@ -151,4 +158,31 @@ a{
 	line-height: 2;
 	margin-right: 3px;
 	padding: 0px 3px;
+}
+
+.submit_btn{
+	display: inline;
+	height: 35px;
+}
+
+.btns{
+	padding: 6px 20px 7px;
+	display: block;
+	background: url('https://passport.58.com/pic2/ui6/my/images/reg-btn.gif') no-repeat scroll 0% 0% transparent;
+	border: medium none;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 0px;
+	margin-left: 25px;
+}
+
+#loginOpt{
+	float: left;
+	font-size: 12px;
+	line-height: 14px;
+	position: relative;
+	bottom: 18px;
+	margin-left: 180px;
 }

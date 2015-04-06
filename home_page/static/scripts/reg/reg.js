@@ -1,0 +1,14 @@
+$(document).ready(function(){
+	$("#mobileReg").click(function(){
+		$(this).siblings().removeAttr("class");
+		$(this).toggleClass("active");
+		$("#mobileWrap").css({"display":"block"});
+		$("#emailWrap").css({"display":"none"});
+	});
+	$("#emailReg").click(function(){
+		$(this).siblings().removeAttr("class");
+		$(this).toggleClass("active");
+		$("#mobileWrap").css({"display":"none"});
+		$("#emailWrap").css({"display":"block"});
+	});
+});

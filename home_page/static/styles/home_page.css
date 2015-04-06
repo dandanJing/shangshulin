@@ -59,7 +59,6 @@ a:hover{
 
 .pos{
     position:relative;
-    z-index:999
 }
 
 #topbar input,#topbar p,#topbar ul{
@@ -93,20 +92,31 @@ a:hover{
 
 #topbar a:hover{
     color:red
-}.bar_left{
+}
+
+.bar_left{
     float:left;
     word-spacing:1px;
     padding-left:10px;
     height:27px
-}.bar_right{
-    float:right
-}.bar_left h2{
+}
+
+.bar_right{
+    float:right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.bar_left h2{
     display:inline;
     font-weight:500;
     font-size:14px;
     color:red;
     float:left
-}.bar_left .tuan{
+}
+
+.bar_left .tuan{
     display:inline-block;
     position:relative;
     padding-right:30px
@@ -159,34 +169,75 @@ a:hover{
     position:absolute;
     left:0;
     top:27px;
-    z-index:1000;
     background:#fff;
     width:470px;
     line-height:20px;
     display:none
 }
 
-#login,#topbar .haschild{
+#topbar .haschild{
     float:left
-}.arrow,.tuan sup{
+}
+
+#login{
+    line-height: 27px;
+    padding: 0px 8px;
+    position: relative;
+    float: left;
+}
+
+.gap{
+    color: #CCC;
+    margin: 0px 6px;
+    font-family: "宋体";
+}
+
+#my_menu{
+    float: left;
+    height:27px;
+    line-height:27px;
+    width: 73px;
+}
+
+#to_my_menu{
+    float: left;
+    margin-right: 5px;
+}
+
+#my_menu .arrow{
+    background: url() no-repeat 0 -156px;
+    position: relative;
+    float: left;
+    width: 7px;
+    height: 4px;
+    overflow: hidden;
+    top: 12px;
+    left: 0px;
+    margin-right: 10px;
+}
+
+/*#my_menu:hover #my_menu_box{
     display:block;
-    position:absolute;
-    width:7px;
-    height:4px;
-    overflow:hidden;
-    top:12px
-}.tuan sup{
-    width:26px;
-    height:12px;
-    top:3px;
-    background:url() no-repeat 0 -102px
-}.arrow{
-    background:url() no-repeat 0 -156px
-}.gap{
-    color:#ccc;
-    margin:0 6px;
-    font-family:'宋体';*
-    font-family:Tahoma}
+    z-index: 2;
+}*/
+
+#my_menu_box{
+    position: relative;
+    width: 73px;
+    padding: 0 2px;
+    float: left;
+    z-index: 2;
+    display: none;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#my_menu_box a{
+    float: left;
+    width: 100%;
+    white-space: nowrap;
+}
+
 .hover .hc{
     display:block;
     position:absolute;
@@ -198,17 +249,15 @@ a:hover{
 }
 
 #topbar .haschild{
-    height:28px;
-    line-height:28px;
+    height:27px;
+    line-height:27px;
     position:relative;
-    z-index:999
 }
 
 #topbar .hover{
     background:#fff;
     border-left:solid 1px #dcdadc;
     border-right:solid 1px #dcdadc;
-    z-index:999;
     margin:0 -1px
 }
 
@@ -302,16 +351,15 @@ a:hover{
     background:#fff;
     position:relative;
     width:100%;
-    z-index:999;
     top:5;
     height:65px;
     overflow:hidden;
+    z-index: 1;
 }
 
 #headerinside{
     height:70px;
     position:relative;
-    z-index:666;
     margin-top:5px
 }
 
@@ -492,7 +540,6 @@ a:hover #fabu{
     overflow:hidden;
     background-color: #fff;
     display:none;
-    z-index:999
 }
 
 .search-fix .hShadow{
@@ -506,7 +553,6 @@ a:hover #fabu{
     position:relative;
     margin:0 auto;
     margin-top: 8px;
-    z-index:99;
     background:url(http://img.58cdn.com.cn/ui6/index/indexbg.png) repeat-x 0 -153px;
 }
 
@@ -652,7 +698,6 @@ a:hover #fabu{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    z-index: 1000;
 }
 
 .tab-nav ul{
@@ -849,7 +894,6 @@ h5{
     text-align:center;
     background:#fff;
     border:1px solid #d1d1d1;
-    z-index:99;
     padding:5px 0
 }
 

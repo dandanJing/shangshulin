@@ -45,7 +45,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ssl_app.urls'
 
 WSGI_APPLICATION = 'ssl_app.wsgi.application'
 
-
+AUTH_USER_MODEL  = "home_page.ssl_users"
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 

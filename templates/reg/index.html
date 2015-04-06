@@ -21,8 +21,19 @@
 			<a href="/">返回首页</a>
 		</div>
 	</div>
+	{% if errors %}  
+        <li>  
+  
+            {% for error in errors %}  
+             <p style="color: red;">  
+                Please correct the error: {{error}} below.  
+             </p>  
+              {% endfor %}  
+        </li>  
+    {% endif %}
 	<div class="content"></div>
-		<form id="reg-form">
+		<form id="reg-form" action="/regAction/" method="post">
+			<!-- {% csrf_token %} -->
 			<div class="regform-body">
 				<div class="regMenu">
 					<span id="mobileReg" class="active"><a>手机注册</a></span>
@@ -40,13 +51,13 @@
 							</p>
 						</div>
 					</div>
-					<div id="mobileWrap">
+					<div id="phoneWrap">
 						<div class="phone-input">
 							<p>
     							<span class="regtlx">手机号</span>
-								<input id="mobile" class="inp inw" type="text" name="mobile" maxlength="20" value="" size="20">
+								<input id="phone" class="inp inw" type="text" name="phone" maxlength="20" value="" size="20">
 								</input>
-    							<span id="mobile_Tip"></span>
+    							<span id="phone_Tip"></span>
 							</p>
 						</div>
 					</div>
@@ -65,11 +76,11 @@
     						<span class="regtlx">密码</span>
 	    					<input id="password" class="inp inw wrong_color" type="password" maxlength="16" onpaste="return false" onkeyup="$.c.user.reg.CheckPasswordStrength(this)" name="password" size="30"></input>
 	    				</p>
-	    				<p>
+	    				<!-- <p>
 	    					<span class="regtlx">确认密码</span>
 							<input id="cpassword" class="inp inw" type="password" onpaste="return false" maxlength="16" name="cpassword" size="30"></input>
 							<span id="cpassword_Tip"></span>
-	    				</p>
+	    				</p> -->
 	    			</div>
 	    			<div class="submit_btn">
 	    				<p id="nextwrap" style="display: block;">

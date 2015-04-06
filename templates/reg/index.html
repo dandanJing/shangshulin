@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//WSC//DTD XHTML 1.0 Transitional //EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-cn"/>
+    <title>注册会员-尚书林</title>
+    <link rel="shortcut icon" href="/static/images/ssl-icon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="/static/styles/reg/reg_home.css">
+</head>
+<body>
+	<div class="header">
+		<a href="/" id="logo">
+			<img src="/static/images/logo.gif" alt="尚书林">
+		</a>
+		<div class="header-title">用户注册</div>
+		<div class="return-home">
+			<a href="/">返回首页</a>
+		</div>
+	</div>
+	<div class="content"></div>
+		<form id="reg-form">
+			<div class="regform-body">
+				<div class="regMenu">
+					<span class="mobileReg"><a>手机注册</a></span>
+					<span class="emailReg"><a>邮箱注册</a></span>
+					<div class="loginTab">已有账号？<a>去登录</a></div>
+				</div>
+				<div class="regWrap">
+					<div class="mobileWrap">
+						<div class="phone-input">
+							<p>
+    							<span class="regtlx">用户名</span>
+								<input id="mobile" class="inp inw" type="text" name="mobile" maxlength="20" value="" size="20">
+								</input>
+    							<span id="mobile_Tip"></span>
+							</p>
+						</div>
+					</div>
+					<div class="emailWrap">
+						
+					</div>
+					<div id="password-input">
+    					<p> 
+    						<span class="regtlx">密　　　码</span>
+	    					<input id="password" class="inp inw wrong_color" type="password" maxlength="16" onpaste="return false" onkeyup="$.c.user.reg.CheckPasswordStrength(this)" name="password" size="30"></input>
+	    				</p>
+	    				<p>
+	    					<span class="regtlx">确 认 密 码</span>
+							<input id="cpassword" class="inp inw" type="password" onpaste="return false" maxlength="16" name="cpassword" size="30"></input>
+							<span id="cpassword_Tip"></span>
+	    				</p>
+	    			</div>
+				</div>
+			</div>					
+		</form>
+	<div class="footer"></div>
+</body>
+</html>

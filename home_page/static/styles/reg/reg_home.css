@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+body{
+	font: 12px/1.2 Arial,Tahoma,"宋体",sans-serif;
+	color: #333;
+	margin: 0px;
+	padding: 0px;
+}
+
+div{
+	display: block;
+}
+
+a{
+	text-decoration: none;
+}
+
+.header{
+	width: 1000px;
+	height: 79px;
+	border-bottom: 1px solid #DBE0E3;
+	margin: 0px auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.content{
+	margin-bottom: 40px;
+}
+
+.footer{
+	float: left;
+	margin: 0px auto;
+	clear: both;
+	overflow: hidden;
+	background: none repeat scroll 0% 0% #FFF;
+	border-top: 1px solid #DBE0E3;
+}
+
+#logo{
+	left: 20px;
+	top: 17px;
+	position: absolute;
+}
+
+.header-title{
+	float: left;
+	height: 39px;
+	border-left: 1px solid #EAEAEA;
+	margin-left: 240px;
+	margin-top: 25px;
+	padding-left: 15px;
+	font: 24px/1.8 "微软雅黑","黑体",sans-serif;
+	color: #666;
+}
+
+.return-home{
+	float: right;
+	right: 10px;
+	margin-top: 54px;
+}
+
+.return-home a{
+	margin: 0px 14px;
+	color: #666;
+}
+
+.regform-body{
+	width: 678px;
+	font-size: 14px;
+	min-height: 400px;
+	height: 800px;
+	margin:0 auto;
+	margin-top: 46px;
+}
+
+.regMenu{
+	width: 678px;
+	border-bottom: 1px solid #CDCFD1;
+	height: 37px;
+	font-size: 14px;
+	position: relative;
+}
+
+.regMenu span{
+	display: inline-block;
+	line-height: 35px;
+	padding: 0px;
+	font-weight: bold;
+}
+
+.regMenu span a{
+	display: block;
+	margin: 0px 60px 0px 0px;
+	color: #888;
+	outline: medium none;
+	position: relative;
+	top: 1px;
+	width: 60px;
+	text-decoration: none;
+}
+
+.loginTab{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	display: inline;
+	font-weight: normal;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+.loginTab a{
+	color: #00C;
+	display: inline;
+	margin: 0px;
+	outline: medium none;
+	position: static;
+	text-decoration: none;
+	width: auto;
+}
+
+.regWrap{
+	padding-left: 52px;
+}
+
+.regWrap p{
+	height: 35px;
+	padding: 10px 0px;
+	line-height: 30px;
+}
+
+.regtlx{
+	width: 84px;
+	float: left;
+	display: block;
+	color: #666;
+}
+
+.regWrap input {
+	vertical-align: middle;
+}
+
+.inw{
+	width: 228px;
+}
+
+.inp{
+	height: 33px;
+	border: 1px solid #C8C8C8;
+	line-height: 2;
+	margin-right: 3px;
+	padding: 0px 3px;
+}

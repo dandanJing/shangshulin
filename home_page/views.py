@@ -19,6 +19,9 @@ def index(request):
 def reg(request):
 	return render_to_response('reg/index.html')
 
+def login(request):
+	return render_to_response('login/index.html')
+
 def regAction(request):
 	errors=[]
 	username = None

@@ -35,4 +35,4 @@ class ssl_en_table(models.Model):
 
 class ssl_users(AbstractUser):
 	mobilephone = models.CharField('mobilephone',max_length=20)
-	nickname = models.CharField('mobilephone',max_length=50)
+	nickname = models.CharField('nickname',max_length=20)

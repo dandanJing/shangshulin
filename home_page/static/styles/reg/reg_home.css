@@ -186,3 +186,70 @@ a{
 	bottom: 18px;
 	margin-left: 180px;
 }
+
+.wrong{
+	background: url('https://passport.58.com/pic2/ui6/my/images/verification-ui6.gif') no-repeat scroll 0px -190px transparent;
+	width: 247px;
+	height: 40px;
+	padding-top: 3px;
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 5px;
+	font-size: 12px;
+	color: #000;
+	position: relative;
+	padding-left: 40px;
+}
+
+.success{
+	display: inline-block;
+	height: 16px;
+	background: url('https://passport.58.com/pic2/ui6/my/images/reg-menu.gif') no-repeat scroll 0px -22px transparent;
+	padding-left: 25px;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+.action{
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 5px;
+	font-size: 12px;
+	color: #000;
+	position: relative;
+	padding-left: 40px;
+	width: 247px;
+	height: 20px;
+	padding: 3px;
+	background: url('https://passport.58.com/pic2/ui6/my/images/verification-ui6.gif') no-repeat scroll 0px 0px transparent;
+}
+
+.action_label{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: block;
+	width: 237px;
+	padding: 0px 10px 0px 40px;
+	min-height: 10px;
+}
+
+.errors{
+	width: 500px;
+	background: url('https://passport.58.com/pic2/ui6/my/images/verification-ui6.gif') no-repeat scroll 0px -190px transparent;
+	display: block;
+	margin: auto;
+	padding-top: 1px;
+}
+
+.errors ul{
+	list-style: none;
+	margin-left: 40px;
+}
+
+.errors ul li{
+	font-size: 15px;
+	color: #000;
+	display: block;
+	padding-bottom: 5px;
+}

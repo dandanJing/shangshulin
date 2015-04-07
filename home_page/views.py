@@ -1,8 +1,11 @@
+#encoding=utf-8
 from django.shortcuts import render_to_response
 from home_page.models import user_items_table
 from home_page.models import ssl_table
 from home_page.models import ssl_en_table
 from home_page.models import ssl_users
+from django.http import HttpResponseRedirect
+
 # from django.template import RequestContext
 # from django.core.context_processors import csrf
 
@@ -23,31 +26,40 @@ def regAction(request):
 	email = None
 	password = None
 
-	if request.method == 'post':
+	if request.method == 'POST':
 		if not request.POST.get('username'):
-			errors.append('Please enter username')
+			errors.append('用户名无效')
 		else:
 			username = request.POST.get('username')
-		if not request.POST.get('phone'):
-			errors.append('Please enter mobilephone')
-		else:
+
+		if not request.POST.get('phone') and not request.POST.get('email'):
+			errors.append('手机号码或邮箱有误')
+		elif request.POST.get('phone'):
 			phone = request.POST.get('phone')
-		if not request.POST.get('email'):
-			errors.append('Please enter email')
 		else:
 			email = request.POST.get('email')
+
+
 		if not request.POST.get('password'):
-			errors.append('Please enterpassword')
+			errors.append('密码有误')
 		else:
 			password = request.POST.get('password')
 
 		if username is not None and (email is not None or phone is not None)and password is not None:
+			nametext = None
 			if email is not None:
-				user = ssl_users.objects.create_user(email,password,email=email,nickname=username)
+				nametext = email	
 			else:
-				user = ssl_users.objects.create_user(phone,password,mobilephone=phone,nickname=username)
+				nametext = phone
+			filterResults = ssl_users.objects.filter(username=nametext)
+			if len(filterResults)>0:
+				errors.append('用户已存在')
+				print errors
+				return render_to_response('reg/index.html',{'errors':errors})
+			user = ssl_users.objects.create_user(nametext,password,email=email,mobilephone=phone,nickname=username)
 			user.is_active = True
 			user.save
 			return HttpResponseRedirect('/login/')
 
-	return render_to_response('index.html',errors)
+	print errors
+	return render_to_response('reg/index.html',{'errors':errors})

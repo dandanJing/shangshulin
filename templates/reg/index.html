@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="/static/images/ssl-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/styles/reg/reg_home.css">
     <script language="javascript"  src="/static/scripts/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/scripts/validate.js"></script>
     <script type="text/javascript" src="/static/scripts/reg/reg.js"></script>
 </head>
 <body>
@@ -21,18 +22,17 @@
 			<a href="/">返回首页</a>
 		</div>
 	</div>
-	{% if errors %}  
-        <li>  
-  
-            {% for error in errors %}  
-             <p style="color: red;">  
-                Please correct the error: {{error}} below.  
-             </p>  
-              {% endfor %}  
-        </li>  
-    {% endif %}
 	<div class="content"></div>
-		<form id="reg-form" action="/regAction/" method="post">
+		{%  if errors %}
+		<div class="errors">
+			<ul>
+			{% for error in errors%}
+				<li>{{error}}</li>
+			{% endfor%}
+			</ul>
+		</div>
+		{% endif%}
+		<form id="reg-form" action="/regAction/" method="post" name="register-form">
 			<!-- {% csrf_token %} -->
 			<div class="regform-body">
 				<div class="regMenu">
@@ -47,7 +47,9 @@
     							<span class="regtlx">用户名</span>
 								<input id="username" class="inp inw" type="text" name="username" maxlength="20" value="" size="20">
 								</input>
-    							<span id="username_Tip"></span>
+    							<span id="username_Tip">
+    								<span class="action_label"></span>
+    							</span>
 							</p>
 						</div>
 					</div>
@@ -57,7 +59,9 @@
     							<span class="regtlx">手机号</span>
 								<input id="phone" class="inp inw" type="text" name="phone" maxlength="20" value="" size="20">
 								</input>
-    							<span id="phone_Tip"></span>
+    							<span id="phone_Tip">
+    								<span class="action_label"></span>
+    							</span>
 							</p>
 						</div>
 					</div>
@@ -67,28 +71,36 @@
     							<span class="regtlx">邮箱</span>
 								<input id="email" class="inp inw" type="text" name="email" maxlength="40" value="" size="40">
 								</input>
-    							<span id="email_Tip"></span>
+    							<span id="email_Tip">
+    								<span class="action_label"></span>
+    							</span>
 							</p>
 						</div>
 					</div>
 					<div id="password-input">
     					<p> 
     						<span class="regtlx">密码</span>
-	    					<input id="password" class="inp inw wrong_color" type="password" maxlength="16" onpaste="return false" onkeyup="$.c.user.reg.CheckPasswordStrength(this)" name="password" size="30"></input>
+	    					<input id="password" class="inp inw wrong_color" type="password" maxlength="16" onpaste="return false" onkeyup="$.c.user.reg.CheckPasswordStrength(this)" name="password" size="30">
+	    					</input>
+	    					<span id="password_Tip">
+								<span class="action_label"></span>
+							</span>
 	    				</p>
-	    				<!-- <p>
+	    				<p>
 	    					<span class="regtlx">确认密码</span>
 							<input id="cpassword" class="inp inw" type="password" onpaste="return false" maxlength="16" name="cpassword" size="30"></input>
-							<span id="cpassword_Tip"></span>
-	    				</p> -->
+							<span id="cpassword_Tip">
+								<span class="action_label"></span>
+							</span>
+	    				</p>
 	    			</div>
 	    			<div class="submit_btn">
 	    				<p id="nextwrap" style="display: block;">
-	    				 <span class="regtlx"></span>
-	    				 <label id="btn" class="btn">
-					        <input id="btnNext" class="btns" type="button" style="width:110px;height:34px;" checked="checked" value="确定"></input>
-					    </label>
-					    <span id="loginOpt">已有账号？<a href="/login/">登录</a></span>
+		    				 <span class="regtlx"></span>
+		    				 <label id="btn" class="btn">
+						        <input id="btnNext" class="btns" type="button" style="width:110px;height:34px;" checked="checked" value="确定"></input>
+						    </label>
+						    <span id="loginOpt">已有账号？<a href="/login/">登录</a></span>
 					    </p>
 	    			</div>
 				</div>

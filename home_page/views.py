@@ -5,6 +5,9 @@ from home_page.models import ssl_table
 from home_page.models import ssl_en_table
 from home_page.models import ssl_users
 from django.http import HttpResponseRedirect
+from datetime import datetime
+from datetime import time
+from django.contrib import auth
 
 # from django.template import RequestContext
 # from django.core.context_processors import csrf
@@ -16,11 +19,8 @@ def index(request):
     return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list})
     # 
 
-def reg(request):
+def reg_index(request):
 	return render_to_response('reg/index.html')
-
-def login(request):
-	return render_to_response('login/index.html')
 
 def regAction(request):
 	errors=[]
@@ -29,6 +29,7 @@ def regAction(request):
 	email = None
 	password = None
 
+	# print request.method
 	if request.method == 'POST':
 		if not request.POST.get('username'):
 			errors.append('用户名无效')
@@ -66,3 +67,24 @@ def regAction(request):
 
 	print errors
 	return render_to_response('reg/index.html',{'errors':errors})
+
+def login_index(request):
+	return render_to_response('login/index.html')
+
+def loginAction(request):
+	errors = []
+	user = None
+	curtime=datetime.now().strftime("%Y-%m-%d %H:%M:%S");
+	# print curtime
+
+	if request.method=='POST':
+		print("POST")
+		username=request.POST.get('username','')
+		password=request.POST.get('password','')
+		user = auth.authenticate(username=username,password=password) 
+		print user       
+        if user is not None and user.is_active:
+			auth.login(request, user)
+			return HttpResponseRedirect("/index.html")
+	errors.append('用户名或密码错误')
+	return render_to_response('login/index.html',{"errors":errors})

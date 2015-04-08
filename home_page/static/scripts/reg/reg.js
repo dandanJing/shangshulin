@@ -68,34 +68,35 @@ $(document).ready(function(){
 		vfcpassword();
 	});
 
-	var validator = new FormValidator('register-form',[{
-		name:'username',
-		display:'required',
-		rules:'required|max_length[20]|min_length[1]',
-	},{
-		name:'phone',
-		rules:'exact_length[11]|integer',
-	},{
-		name:'email',
-		rules:'valid_email',
-	},{
-		name:'password',
-		display:'required',
-		rules:'min_length[6]|max_length[30]',
-	},{
-		name:'cpassword',
-		display:'required',
-		rules:'matches[password]',
-	}],function(errors,event){
-		if(errors.length > 0){
-			vfname();
-			vfemail();
-			vfphone();
-			vfpassword();
-			vfcpassword();
-		}
-	});
+	// var validator = new FormValidator('register-form',[{
+	// 	name:'username',
+	// 	display:'required',
+	// 	rules:'required|max_length[20]|min_length[1]',
+	// },{
+	// 	name:'phone',
+	// 	rules:'exact_length[11]|integer',
+	// },{
+	// 	name:'email',
+	// 	rules:'valid_email',
+	// },{
+	// 	name:'password',
+	// 	display:'required',
+	// 	rules:'min_length[6]|max_length[30]',
+	// },{
+	// 	name:'cpassword',
+	// 	display:'required',
+	// 	rules:'matches[password]',
+	// }],function(errors,event){
+	// 	if(errors.length > 0){
+	// 		vfname();
+	// 		vfemail();
+	// 		vfphone();
+	// 		vfpassword();
+	// 		vfcpassword();
+	// 	}
+	// });
 	$("#btnNext").click(function(){
+		// alert('submit');
 		$("#reg-form").submit();
 	});
 });

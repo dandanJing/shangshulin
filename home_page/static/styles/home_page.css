@@ -381,7 +381,8 @@ a:hover{
     left:407px;
     top:11px;
     line-height:26px;
-    overflow:hidden
+    overflow:hidden;
+    margin-top: 8px;
 }
 
 #searchbar i{
@@ -430,7 +431,7 @@ a:hover{
 .inputcon{
     float:left;
     height:34px;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .inputcon input:active{

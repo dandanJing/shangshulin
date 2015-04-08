@@ -86,12 +86,12 @@ a{
 	background-color: #FFF;
 	width: 285px;
 	height: 300px;
-	margin-top: 60px;
-	margin-right: 200px;
 	z-index: 1;
 	border-width: 2px;
 	border-style: solid;
 	border-color: #FF4200 #DEDEDE #DEDEDE;
+	margin-top:40px;
+	margin-right: 200px;
 }
 
 .login-box .login-hd{
@@ -141,6 +141,7 @@ a{
 	position: absolute;
 	padding: 0px 0px 0px 6px;
 	color: #999;
+	display: none;
 }
 
 .login-bd .username-field {
@@ -199,4 +200,24 @@ a{
 	background: none repeat scroll 0% 0% #FF4700;
 	border-radius: 3px;
 	cursor: pointer;
+}
+
+.errors{
+	width: 300px;
+	background: url('https://passport.58.com/pic2/ui6/my/images/verification-ui6.gif') no-repeat scroll 0px -190px transparent;
+	display: block;
+	margin: auto;
+	padding: 3px 3px;
+	margin-top: 10px;
+}
+
+.errors ul{
+	list-style: none;
+	margin-left: 30px;
+}
+
+.errors ul li{
+	font-size: 15px;
+	color: #000;
+	display: block;
 }

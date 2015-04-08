@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="/static/images/ssl-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/styles/login/login_home.css">
     <script language="javascript"  src="/static/scripts/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/scripts/login/login.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -23,6 +24,15 @@
 	<div class="content">
 		<div class="content-left"></div>
 		<div class="content-right">
+			{%  if errors %}
+			<div class="errors">
+				<ul>
+				{% for error in errors%}
+					<li>{{error}}</li>
+				{% endfor%}
+				</ul>
+			</div>
+			{% endif%}
 			<div class="login-box">
 				<div class="login-hd">
 					<h2>登录</h2>
@@ -31,7 +41,7 @@
 					<form id="login-form" action="/loginAction/" method="post" name="login-form">
 						<div class="field username-field">
 							<label class="name-image-front"></label>
-							<span class="placeholder">手机号/会员名/邮箱</span>
+							<span class="placeholder" id="name-ph">手机号/会员名/邮箱</span>
 							<input id="username" class="login-text" type="text" tabindex="1" maxlength="32" value="" name="username"></input>
 						</div>
 						<div class="field pwd-field">

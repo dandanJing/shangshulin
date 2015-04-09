@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^reg/','home_page.views.reg_index'), 
     url(r'^login/','home_page.views.login_index'),
     url(r'^regAction/','home_page.views.regAction'),
-    url(r'^loginAction/','home_page.views.loginAction'),  
+    url(r'^loginAction/','home_page.views.loginAction'),
+    url(r'^loginout/','home_page.views.logoutAction'),
     url(r'$','home_page.views.index'),
 )

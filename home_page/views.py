@@ -16,7 +16,15 @@ from django.contrib import auth
 def index(request):
     booklist = ssl_table.objects.all()
     ssl_en_list = ssl_en_table.objects.all()
-    return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list})
+    if request.user.is_authenticated():
+    	print request.user
+    	print 'authenticate'
+    	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list,'login_user':request.user})
+    else:
+    	print request.user
+    	print 'logout'
+    	auth.logout(request)
+    	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list})
     # 
 
 def reg_index(request):
@@ -78,13 +86,17 @@ def loginAction(request):
 	# print curtime
 
 	if request.method=='POST':
-		print("POST")
 		username=request.POST.get('username','')
 		password=request.POST.get('password','')
-		user = auth.authenticate(username=username,password=password) 
-		print user       
+		user = auth.authenticate(username=username,password=password)        
         if user is not None and user.is_active:
 			auth.login(request, user)
+			print user
+			print 'login success'
 			return HttpResponseRedirect("/index.html")
 	errors.append('用户名或密码错误')
 	return render_to_response('login/index.html',{"errors":errors})
+
+def logoutAction(request):
+	auth.logout(request)
+	return render_to_response('index.html')

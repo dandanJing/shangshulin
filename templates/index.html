@@ -41,12 +41,18 @@
                         <a href="">已买到的宝贝</a>
                     </div>
                 </div>
+                {% if login_user %}
                 <div id="login">
+                    <span class="login_name">欢迎{{ login_user}},</span>
+                    <a href="/loginout/">退出登录</a>
+                </div>
+                {%  else %}
+                <div id="login_success">
                     <a href="/login/">登录</a>
                     <span class="gap">|</span>
                     <a href="/reg/">注册</a>
                 </div>
-                
+                {% endif %}
             </div>
         </div>
     </div>
@@ -150,7 +156,7 @@
                                 <li class="item">
                                     <div>                            
                                         <a href="http://www.taobao.com/market/car/ershouchepindao.php">
-                                            <img alt="二手车" src="/static/images/slider-2.png">
+                                            <img alt="二手车" src="/static/images/home_2.jpg">
                                         </a>
                                     </div>
                                 </li>

@@ -876,10 +876,11 @@ h5{
 .price-block {
     font-family: Verdana;
     font-size: 12px;
-    text-align: left;
-    float: left;
+    text-align: right;
+    float: right;
     display: block;
     padding-top: 5px;
+    padding-right: 5px;
 }
 
 .price-block b{
@@ -897,18 +898,7 @@ h5{
 .price-block .old_price{
     padding-left: 2px;
     font-size: 10px;
-    text-align: left;
-}
-
-.item_right{
-    float: right;
-    font-size: 12px;
-    font-family: 'Microsoft Yahei';
-    padding: 10px 3px;
-}
-
-.item_right p{
-    padding-bottom: 4px;
+    padding-top: 5px;
 }
 
 .item_num{
@@ -1070,13 +1060,13 @@ h5{
     color: #888;
 }
 
-.new-items{
+.good-items{
     width: 1000px;
     height: 232px;
     float: left;
 }
 
-.new-items .items-head{
+.good-items .items-head{
     width: 1000px;
     height: 30px;
     float: left;
@@ -1084,7 +1074,7 @@ h5{
     padding:5px 0;
 }
 
-.new-items .items-head h2{
+.good-items .items-head h2{
     font-size: 18px;
     font-family: 'Microsoft Yahei';
     line-height: 22px;
@@ -1095,7 +1085,7 @@ h5{
     border-left: 3px solid #a8d200;
 }
 
-.new-items .items-body{
+.good-items .items-body{
     width: 980px;
     height: 160px;
     float: left;
@@ -1106,13 +1096,13 @@ h5{
     border-bottom: 1px solid #e6e6e6;
 }
 
-.new-items .items-body .item-list{
+.good-items .items-body .item-list{
     float: left;
     margin-bottom: 5px;
     position: relative;
 }
 
-.new-items .items-body .item-list .change{
+.good-items .items-body .item-list .change{
     position: absolute;
     right: 2px;
     top: -38px;
@@ -1121,31 +1111,33 @@ h5{
     font-size: 14px;
 }
 
-.new-items .items-body .item-list .change a{
+.good-items .items-body .item-list .change a{
     color: #000;
 }
 
-.new-items .items-body .item-list ul{
+.good-items .items-body .item-list ul{
     height: 150px;
     width: 980px;
 }
 
-.new-items .items-body .item-list li{
+.good-items .items-body .item-list li{
     margin-right: 12px;
     width: 156px;
     float: left;
-    position: relative;;
+    position: relative;
     overflow: hidden;
 }
 
-.new-items .items-body .item-list .item-pic{
+.good-items .items-body .item-list .item-pic{
     height: 130px;
     width: 130px;
     overflow: hidden;
     padding: 5px;
+    z-index: 1;
+    position: relative;
 }
 
-.new-items .items-body .item-list .item-title{
+.good-items .items-body .item-list .item-title{
     height: 22px;
     line-height: 22px;
     overflow: hidden;
@@ -1153,7 +1145,7 @@ h5{
     text-align: center;
 }
 
-.new-items .items-body .item-list .item a{
+.good-items.items-body .item-list .item a{
     color: #000;
 }
 
@@ -1191,13 +1183,46 @@ h5{
 }
 
 .items_body .bd-middle-mod{
-    width: 730px;
+    width: 1000px;
     margin: 0;
     height: 480px;
     overflow: hidden;
     float: left;
     display: inline;
+    position: relative;
     background-color: #eee;
+}
+
+.ssl_items_list .item-pic{
+    position: relative;
+    background-color: #0f0;
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    z-index: 1;
+}
+
+.ssl_items_list .item-pic img{
+    position: relative;
+    width: 150px;
+    height: 200px;
+    z-index: 1;
+}
+
+.item-pic .pic_action_box{
+    width: 130px;
+    z-index: 3;
+    top:-50px;
+    left: 0px;
+    position: relative;
+    display: none;
+}
+
+.item-pic .pic_action_box img{
+    width: 60px;
+    height: 40px;
+    padding-top: 0 3px;
 }
 
 .items_head h2 {

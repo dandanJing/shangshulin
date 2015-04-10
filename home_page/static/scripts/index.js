@@ -19,6 +19,17 @@ $(document).ready(function(){
  	}, function(){
  		t = setInterval("showAuto()", 5000);
  	});
+    $(".item-pic").hover(function(){
+        if($(this).children.length > 1){
+            var temp = $(this).children().eq(1);
+            temp.css({"display":"inline"});
+        }
+    },function(){
+        if($(this).children.length > 1){
+            var temp = $(this).children().eq(1);
+            temp.css({"display":"none"});
+        }
+    });
 });
 
 function showAuto() {

@@ -877,20 +877,53 @@ h5{
     font-family: Verdana;
     font-size: 12px;
     text-align: left;
+    float: left;
+    display: block;
+    padding-top: 5px;
 }
 
 .price-block b{
     font-weight: 400;
     font-family: Arial,Verdana;
-    padding-right: 2px;
     color: #999;
 }
 
-.price em {
+.price-block .price em {
     font-weight: 700;
     font-size: 14px;
     color: #f40;
 }
+
+.price-block .old_price{
+    padding-left: 2px;
+    font-size: 10px;
+    text-align: left;
+}
+
+.item_right{
+    float: right;
+    font-size: 12px;
+    font-family: 'Microsoft Yahei';
+    padding: 10px 3px;
+}
+
+.item_right p{
+    padding-bottom: 4px;
+}
+
+.item_num{
+    float: right;
+    font-size: 12px;
+    text-align: right;
+    font-family: 'Microsoft Yahei';
+    padding-top: 18px;
+    padding-right: 5px;
+}
+
+.remain_num{
+    
+}
+
 .ad_hq,.ad_sj{
     display:none
 }
@@ -1164,6 +1197,7 @@ h5{
     overflow: hidden;
     float: left;
     display: inline;
+    background-color: #eee;
 }
 
 .items_head h2 {

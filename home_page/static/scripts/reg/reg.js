@@ -67,6 +67,10 @@ $(document).ready(function(){
 	$("#cpassword").blur(function(){
 		vfcpassword();
 	});
+
+	$("#btnNext").click(function(){
+		$("#reg-form").submit();
+	});
 });
 
 function vfname(){

@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from datetime import datetime
 from datetime import time
 from django.contrib import auth
+from wtforms import Form, BooleanField, TextField, PasswordField, validators
 
 # from django.template import RequestContext
 # from django.core.context_processors import csrf
@@ -82,7 +83,7 @@ def regAction(request):
 			user = ssl_users.objects.create_user(username=nametext,password=password,email=email,nickname=username)
 			if phone is not None:
 				user.mobilephone = phone
-			if not is_valid_user(user):
+			if not user.is_valid_user():
 				print "invalid"
 				return render_to_response('reg/index.html')
 			user.is_active = True
@@ -117,3 +118,10 @@ def loginAction(request):
 def logoutAction(request):
 	auth.logout(request)
 	return render_to_response('index.html')
+
+class RegistrationForm(Form):
+	username = TextField('username', [validators.Length(min=4, max=20)])
+	email = TextField('email', [validators.Length(min=6, max=35),validators.Email("invalid email")])
+	password = PasswordField('password', [validators.Required(),validators.EqualTo('confirm', message='Passwords must match')])
+	confirm = PasswordField('cpassword')
+	phone = TextField('phone', [validators.Length(min=11, max=11)])

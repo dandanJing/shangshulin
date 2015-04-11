@@ -67,38 +67,6 @@ $(document).ready(function(){
 	$("#cpassword").blur(function(){
 		vfcpassword();
 	});
-
-	// var validator = new FormValidator('register-form',[{
-	// 	name:'username',
-	// 	display:'required',
-	// 	rules:'required|max_length[20]|min_length[1]',
-	// },{
-	// 	name:'phone',
-	// 	rules:'exact_length[11]|integer',
-	// },{
-	// 	name:'email',
-	// 	rules:'valid_email',
-	// },{
-	// 	name:'password',
-	// 	display:'required',
-	// 	rules:'min_length[6]|max_length[30]',
-	// },{
-	// 	name:'cpassword',
-	// 	display:'required',
-	// 	rules:'matches[password]',
-	// }],function(errors,event){
-	// 	if(errors.length > 0){
-	// 		vfname();
-	// 		vfemail();
-	// 		vfphone();
-	// 		vfpassword();
-	// 		vfcpassword();
-	// 	}
-	// });
-	$("#btnNext").click(function(){
-		// alert('submit');
-		$("#reg-form").submit();
-	});
 });
 
 function vfname(){
@@ -118,6 +86,7 @@ function vfname(){
 		$("#username_Tip").toggleClass("wrong");
 		$("#username_Tip").children().html("您输入的用户名无效");
 	}
+	return result;
 }
 
 function vfphone(){
@@ -140,6 +109,7 @@ function vfphone(){
 		$("#phone_Tip").toggleClass("wrong");
 		$("#phone_Tip").children().html("请输入正确的手机号码");
 	}
+	return result;
 }
 
 function vfemail(){
@@ -159,6 +129,7 @@ function vfemail(){
 		$("#email_Tip").toggleClass("wrong");
 		$("#email_Tip").children().html("您输入的邮箱有误");
 	}
+	return result;
 }
 
 function vfpassword(){
@@ -197,4 +168,5 @@ function vfcpassword(){
 		$("#cpassword_Tip").toggleClass("wrong");
 		$("#cpassword_Tip").children().html("两次输入的密码不一致");
 	};
+	return result;
 }

@@ -16,12 +16,14 @@ from django.contrib import auth
 def index(request):
     booklist = ssl_table.objects.all()
     ssl_en_list = ssl_en_table.objects.all()
+    print "index.html user:"
+    print request.user
     if request.user.is_authenticated():
-    	print request.user
+    	#print request.user
     	print 'authenticate'
-    	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list,'login_user':request.user})
+    	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list,'login_user':request.user.nickname})
     else:
-    	print request.user
+    	#print request.user
     	print 'logout'
     	auth.logout(request)
     	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list})
@@ -36,6 +38,7 @@ def regAction(request):
 	phone = None
 	email = None
 	password = None
+	cpassword = None
 
 	# print request.method
 	if request.method == 'POST':
@@ -57,7 +60,12 @@ def regAction(request):
 		else:
 			password = request.POST.get('password')
 
-		if username is not None and (email is not None or phone is not None)and password is not None:
+		if not request.POST.get('cpassword'):
+			errors.append('确认密码输入有误')
+		else:
+			cpassword = request.POST.get('cpassword')
+
+		if username is not None and (email is not None or phone is not None)and password is not None and len(errors) == 0:
 			nametext = None
 			if email is not None:
 				nametext = email	
@@ -68,10 +76,19 @@ def regAction(request):
 				errors.append('用户已存在')
 				print errors
 				return render_to_response('reg/index.html',{'errors':errors})
-			user = ssl_users.objects.create_user(nametext,password,email=email,mobilephone=phone,nickname=username)
+			
+			# user input verify
+			print username+" "+nametext
+			user = ssl_users.objects.create_user(username=nametext,password=password,email=email,nickname=username)
+			if phone is not None:
+				user.mobilephone = phone
+			if not is_valid_user(user):
+				print "invalid"
+				return render_to_response('reg/index.html')
 			user.is_active = True
 			user.save
-			return HttpResponseRedirect('/login/')
+			request.user = user
+			return index(request)
 
 	print errors
 	return render_to_response('reg/index.html',{'errors':errors})

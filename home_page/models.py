@@ -34,5 +34,8 @@ class ssl_en_table(models.Model):
 	itemimagetable = models.CharField('itemImageTable',max_length=100)
 
 class ssl_users(AbstractUser):
-	mobilephone = models.CharField('mobilephone',max_length=20)
+	mobilephone = models.CharField('mobilephone',max_length=20,default="")
 	nickname = models.CharField('nickname',max_length=20)
+
+	def is_vaild_user(self):
+		return False

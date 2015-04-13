@@ -12,7 +12,6 @@
     <script src="/static/scripts/jquery.alerts.js" type="text/javascript"></script>
     <script type="text/javascript" src="/static/scripts/index.js"></script>
     <script type="text/javascript" src="/static/scripts/my_menu.js"></script>
-    </script>
 </head>
 <body class = "homebody">
     <!--topbar-->
@@ -282,12 +281,12 @@
                             <div class="change">
                                 <a href="http://s.2.taobao.com/list/list.htm?divisionId=110100" target="_blank">换一批</a>
                             </div>
-                            {%if book_list %}
+                            {%if good_book_list %}
                             <ul>
-                                {% for item in book_list%}
+                                {% for item in good_book_list%}
                                 <li class="item">
                                     <div class="item-pic">
-                                        <a href="" target="_blank">
+                                        <a href="/show_item_detail?id={{item.itemid}}" target="_blank">
                                             <img class="J_ItemPic" src="/static/images/{{item.itemimageurl}}" title={{item.itemname}}>
                                         </a>
                                     </div>

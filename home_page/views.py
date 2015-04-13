@@ -15,19 +15,19 @@ from wtforms import Form, BooleanField, TextField, PasswordField, validators
 
 # Create your views here.
 def index(request):
-    booklist = ssl_table.objects.all()
+    good_booklist = ssl_table.objects.all()
     ssl_en_list = ssl_en_table.objects.all()
     print "index.html user:"
     print request.user
     if request.user.is_authenticated():
     	#print request.user
     	print 'authenticate'
-    	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list,'login_user':request.user.nickname})
+    	return render_to_response('index.html',{'good_book_list':good_booklist,'ssl_en_list':ssl_en_list,'login_user':request.user.nickname})
     else:
     	#print request.user
     	print 'logout'
     	auth.logout(request)
-    	return render_to_response('index.html',{'book_list':booklist,'ssl_en_list':ssl_en_list})
+    	return render_to_response('index.html',{'good_book_list':good_booklist,'ssl_en_list':ssl_en_list})
     # 
 
 def reg_index(request):
@@ -128,10 +128,17 @@ def logoutAction(request):
 
 def regSearchAction(request):
 	print request.method
-	if request.POST.get('username'):
-		username=request.POST.get('username','')
-		print username
-		return username
+	user = ssl_users.objects.filter(username="")
+	json_data = serializers.serialize("json", ssl_users.objects.all())
+	return HttpResponse(json_data,content_type="application/json")
+
+def show_item_detail(request):
+	print "show_item_detail"
+	print request.method
+	if request.method=='GET':
+		itemid = request.GET.get('id','')
+		return render_to_response('show_items/item_detail.html',{"itemid":itemid})
+	return render_to_response('index.html')
 
 class RegistrationForm(Form):
 	username = TextField('username', [validators.Length(min=4, max=20)])

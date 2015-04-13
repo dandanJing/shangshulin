@@ -86,10 +86,13 @@ function vfname(){
 	var text = $("#username").val();
 	var result = false;
 	$.ajax({
-		url:"/reg_search/",
+		url:"/check-username",
 		type:"post",
 		dataType:"json",
-		data:{username:text},
+		data:JSON.stringify({
+			'username':text
+		}),
+		contentType:'application/json;charset=UTF-8',
 		success:function (data) {
 			alert(data);
 		},

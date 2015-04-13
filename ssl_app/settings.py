@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'home_page',
     'wtforms',
+    'ssl_user',
 )
 
 MIDDLEWARE_CLASSES = (

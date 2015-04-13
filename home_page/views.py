@@ -67,20 +67,27 @@ def regAction(request):
 			cpassword = request.POST.get('cpassword')
 
 		if username is not None and (email is not None or phone is not None)and password is not None and len(errors) == 0:
-			nametext = None
-			if email is not None:
-				nametext = email	
-			else:
-				nametext = phone
-			filterResults = ssl_users.objects.filter(username=nametext)
+			filterResults = ssl_users.objects.filter(username=username)
 			if len(filterResults)>0:
-				errors.append('用户已存在')
+				errors.append('用户名已存在')
 				print errors
 				return render_to_response('reg/index.html',{'errors':errors})
 			
+			filterResults = ssl_users.objects.filter(email=email)
+			if len(filterResults)>0:
+				errors.append('该邮箱已注册')
+				print errors
+				return render_to_response('reg/index.html',{'errors':errors})
+
+			filterResults = ssl_users.objects.filter(mobilephone=phone)
+			if len(filterResults)>0:
+				errors.append('该手机号已注册')
+				print errors
+				return render_to_response('reg/index.html',{'errors':errors})
+
 			# user input verify
-			print username+" "+nametext
-			user = ssl_users.objects.create_user(username=nametext,password=password,email=email,nickname=username)
+			print username
+			user = ssl_users.objects.create_user(username=username,password=password,email=email,nickname=username)
 			if phone is not None:
 				user.mobilephone = phone
 			# if not user.is_valid_user():
@@ -118,6 +125,13 @@ def loginAction(request):
 def logoutAction(request):
 	auth.logout(request)
 	return render_to_response('index.html')
+
+def regSearchAction(request):
+	print request.method
+	if request.POST.get('username'):
+		username=request.POST.get('username','')
+		print username
+		return username
 
 class RegistrationForm(Form):
 	username = TextField('username', [validators.Length(min=4, max=20)])

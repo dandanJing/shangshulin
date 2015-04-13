@@ -85,6 +85,18 @@ $(document).ready(function(){
 function vfname(){
 	var text = $("#username").val();
 	var result = false;
+	$.ajax({
+		url:"/reg_search/",
+		type:"post",
+		dataType:"json",
+		data:{username:text},
+		success:function (data) {
+			alert(data);
+		},
+		error:function (msg) {
+			alert(msg.responseText);
+		},
+	});
 	if(text.length>=4 && text.length<=20){
 		result = true;
 	} else{

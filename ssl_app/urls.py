@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^loginAction/','home_page.views.loginAction'),
     url(r'^loginout/','home_page.views.logoutAction'),
     url(r'$','home_page.views.index'),
+    url(r'^reg_search/','home_page.views.regSearchAction'),
 )

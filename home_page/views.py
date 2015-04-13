@@ -83,9 +83,9 @@ def regAction(request):
 			user = ssl_users.objects.create_user(username=nametext,password=password,email=email,nickname=username)
 			if phone is not None:
 				user.mobilephone = phone
-			if not user.is_valid_user():
-				print "invalid"
-				return render_to_response('reg/index.html')
+			# if not user.is_valid_user():
+			# 	print "invalid"
+			# 	return render_to_response('reg/index.html')
 			user.is_active = True
 			user.save
 			request.user = user

@@ -3,14 +3,14 @@ $(document).ready(function(){
 		$(this).siblings().removeAttr("class");
 		$(this).toggleClass("active");
 		$("#phoneWrap").css({"display":"block"});
-		$("#email").val("");
+		//$("#email").val("");
 		$("#emailWrap").css({"display":"none"});
 	});
 	$("#emailReg").click(function(){
 		$(this).siblings().removeAttr("class");
 		$(this).toggleClass("active");
 		$("#phoneWrap").css({"display":"none"});
-		$("#phone").val("");
+		//$("#phone").val("");
 		$("#emailWrap").css({"display":"block"});
 	});
 
@@ -69,7 +69,16 @@ $(document).ready(function(){
 	});
 
 	$("#btnNext").click(function(){
-		$("#reg-form").submit();
+		//alert("submit");
+		if(vfname()&&vfpassword&&vfcpassword){
+			if($("#mobileReg").hasClass("active")&&vfphone()){
+				$("#email").val("");
+				$("#reg-form").submit();
+			}else if($("#emailReg").hasClass("active")&&vfemail()){
+				$("#phone").val("");
+				$("#reg-form").submit();
+			}		
+		}
 	});
 });
 

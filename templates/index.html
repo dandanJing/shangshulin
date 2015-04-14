@@ -214,7 +214,7 @@
                     </div>
                     <div class="on-selling col" data-spm="2007.1000261.21">
                         <h3>正在出售</h3>
-                        <ul class="item-list">
+                        <ul>
                             <li class="item ks-switchable-panel-internal19">
                                 <div class="item-pic sh-pic">
                                     <a href="http://2.taobao.com/item.htm?id=44534002414" target="_blank">
@@ -273,11 +273,11 @@
                     </div>
                 </div>
                 <div class="good-items">
-                    <div class="items-head">
+                    <div class="items_head">
                         <h2>尚书精品</h2>
                     </div>
-                    <div class="items-body">
-                        <div class="item-list">
+                    <div class="good-items-body">
+                        <div class="good-item-list item-list">
                             <div class="change">
                                 <a href="http://s.2.taobao.com/list/list.htm?divisionId=110100" target="_blank">换一批</a>
                             </div>
@@ -289,10 +289,24 @@
                                         <a href="/show_item_detail?id={{item.itemid}}" target="_blank">
                                             <img class="J_ItemPic" src="/static/images/{{item.itemimageurl}}" title={{item.itemname}}>
                                         </a>
+                                        <span class="pic_action_box">
+                                            <a href=""><img src="/static/images/buy_car_1.jpg"></a>
+                                            <a href=""><img src="/static/images/upload_1.jpg"></a>
+                                        </span>
                                     </div>
                                     <p class="item-title">
                                         <a href="">{{item.itemname}}</a>
                                     </p>
+                                    <div class="price-block">
+                                        <p class="price">
+                                            <b>¥</b>
+                                            <em>{{item.itemprice}}</em>
+                                        </p>
+                                        <p class="old_price">
+                                            <b>原价&nbsp;&nbsp;¥</b>
+                                            <em>{{item.itemcostprice}}</em>
+                                        </p>
+                                    </div>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -320,7 +334,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="bd-middle-mod">
+                        <div class="bd-middle-mod item-list">
                             {% if ssl_en_list %}
                             <ul>
                                 {% for item in ssl_en_list %}

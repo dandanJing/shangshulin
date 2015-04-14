@@ -880,13 +880,13 @@ h5{
     float: right;
     display: block;
     padding-top: 5px;
-    padding-right: 5px;
+    padding-right: 14px;
 }
 
 .price-block b{
     font-weight: 400;
     font-family: Arial,Verdana;
-    color: #999;
+    color: #555;
 }
 
 .price-block .price em {
@@ -1062,32 +1062,13 @@ h5{
 
 .good-items{
     width: 1000px;
-    height: 232px;
+    height: 320px;
     float: left;
 }
 
-.good-items .items-head{
-    width: 1000px;
-    height: 30px;
-    float: left;
-    margin-left: 15px;
-    padding:5px 0;
-}
-
-.good-items .items-head h2{
-    font-size: 18px;
-    font-family: 'Microsoft Yahei';
-    line-height: 22px;
-    padding-left: 10px;
-    padding-top: 5px;
-    font-weight: 700;
-    color: #333;
-    border-left: 3px solid #a8d200;
-}
-
-.good-items .items-body{
+.good-items-body{
     width: 980px;
-    height: 160px;
+    height: 260px;
     float: left;
     padding: 12px 5px 8px 5px;
     margin-left: 15px;
@@ -1096,13 +1077,13 @@ h5{
     border-bottom: 1px solid #e6e6e6;
 }
 
-.good-items .items-body .item-list{
+.good-items-body .good-item-list{
     float: left;
     margin-bottom: 5px;
     position: relative;
 }
 
-.good-items .items-body .item-list .change{
+.good-items-body .good-item-list .change{
     position: absolute;
     right: 2px;
     top: -38px;
@@ -1111,33 +1092,58 @@ h5{
     font-size: 14px;
 }
 
-.good-items .items-body .item-list .change a{
+.good-items-body .good-item-list .change a{
     color: #000;
 }
 
-.good-items .items-body .item-list ul{
+.good-item-list ul{
     height: 150px;
     width: 980px;
 }
 
-.good-items .items-body .item-list li{
-    margin-right: 12px;
+.item-list li{
+    margin-right: 10px;
     width: 156px;
     float: left;
     position: relative;
+    padding-bottom: 5px;
+    text-align: center;
     overflow: hidden;
 }
 
-.good-items .items-body .item-list .item-pic{
-    height: 130px;
-    width: 130px;
-    overflow: hidden;
-    padding: 5px;
-    z-index: 1;
+.item-list .item-pic{
     position: relative;
+    background-color: #0f0;
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    z-index: 1;
 }
 
-.good-items .items-body .item-list .item-title{
+.item-list .item-pic img{
+    position: relative;
+    width: 150px;
+    height: 200px;
+    z-index: 1;
+}
+
+.item-list .item-pic .pic_action_box{
+    width: 130px;
+    z-index: 3;
+    top:-50px;
+    left: 0px;
+    position: relative;
+    display: none;
+}
+
+.item-list .item-pic .pic_action_box img{
+    width: 60px;
+    height: 40px;
+    padding-top: 0 3px;
+}
+
+.item-list .item-title{
     height: 22px;
     line-height: 22px;
     overflow: hidden;
@@ -1145,7 +1151,7 @@ h5{
     text-align: center;
 }
 
-.good-items.items-body .item-list .item a{
+.item-list .item a{
     color: #000;
 }
 
@@ -1163,7 +1169,19 @@ h5{
 
 .items_head{
     height: 22px;
-    padding: 8px 0;     
+    padding: 8px 0; 
+    margin-left: 15px;
+    font-weight: bold;    
+}
+
+.items_head h2 {
+    font-size: 22px;
+    font-family: "Microsoft Yahei";
+    line-height: 22px;
+    padding-left: 10px;
+    font-weight: 500;
+    border-left: 3px solid #A8D200;
+    text-align: left;
 }
 
 .items_body{
@@ -1183,56 +1201,15 @@ h5{
 }
 
 .items_body .bd-middle-mod{
-    width: 1000px;
+    width: 980px;
     margin: 0;
+    margin-left: 10px;
     height: 480px;
     overflow: hidden;
     float: left;
     display: inline;
     position: relative;
     background-color: #eee;
-}
-
-.ssl_items_list .item-pic{
-    position: relative;
-    background-color: #0f0;
-    width: 150px;
-    height: 200px;
-    overflow: hidden;
-    float: left;
-    z-index: 1;
-}
-
-.ssl_items_list .item-pic img{
-    position: relative;
-    width: 150px;
-    height: 200px;
-    z-index: 1;
-}
-
-.item-pic .pic_action_box{
-    width: 130px;
-    z-index: 3;
-    top:-50px;
-    left: 0px;
-    position: relative;
-    display: none;
-}
-
-.item-pic .pic_action_box img{
-    width: 60px;
-    height: 40px;
-    padding-top: 0 3px;
-}
-
-.items_head h2 {
-    font-size: 22px;
-    font-family: "Microsoft Yahei";
-    line-height: 22px;
-    padding-left: 10px;
-    font-weight: 400;
-    border-left: 3px solid #A8D200;
-    text-align: left;
 }
 
 .items_body .bd-left-mod .tag{
@@ -1254,19 +1231,4 @@ h5{
     display: block;
     height: 190px;
     width: 190px;
-}
-
-.items_body ul{
-    margin-left: 20px;
-}
-
-.items_body ul li{
-    float: left;
-    padding-right: 15px;
-    padding-bottom: 5px;
-    text-align: center;
-}
-
-.item .price-block{
-    text-align: right;
 }

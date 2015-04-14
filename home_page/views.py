@@ -133,11 +133,9 @@ def logoutAction(request):
 	return render_to_response('index.html')
 
 def show_item_detail(request):
-	print "show_item_detail"
-	print request.method
 	if request.method=='GET':
 		itemid = request.GET.get('id','')
-		return render_to_response('show_items/item_detail.html',{"itemid":itemid})
+		return render_to_response('show_items/item_detail.html',{'item_detail':ssl_table.objects.filter(itemid = itemid)})
 	return render_to_response('index.html')
 
 class RegistrationForm(Form):

@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class user_items_table(models.Model):
-	userid = models.CharField('userId',max_length=50)
+	userid = models.CharField('userId',max_length=50, unique=True)
 	userdisplayname = models.CharField('userDisplayName',max_length=50)
 	password = models.CharField('password',max_length=20)
 	realname = models.CharField('realName',max_length=50)
@@ -16,7 +16,7 @@ class user_items_table(models.Model):
 		return '%s%s'%(self.userid,self.userdisplayname)
 
 class ssl_table(models.Model):
-	itemid = models.CharField('itemId',max_length=100)
+	itemid = models.CharField('itemId',max_length=100, unique=True)
 	itemname = models.CharField('itemName',max_length=100)
 	itemcostprice = models.IntegerField('itemCostPrice',default = 0)
 	itemprice = models.IntegerField('itemPrice')
@@ -25,7 +25,7 @@ class ssl_table(models.Model):
 	itemimagetable = models.CharField('itemImageTable',max_length=100)
 
 class ssl_en_table(models.Model):
-	itemid = models.CharField('itemId',max_length=100)
+	itemid = models.CharField('itemId',max_length=100, unique=True)
 	itemname = models.CharField('itemName',max_length=100)
 	itemcostprice = models.IntegerField('itemCostPrice')
 	itemprice = models.IntegerField('itemPrice')

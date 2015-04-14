@@ -38,7 +38,7 @@ class ssl_users(AbstractUser):
 	nickname = models.CharField('nickname',max_length=20)
 
 	def __str__(self):
-		return "%s\n%s\n%s\n"%(self.username,self.mobilephone,self.email)
+		return "username:%s\tphone:%s\temail:%s\t"%(self.username,self.mobilephone,self.email)
 	
 	def is_valid_user(self):
 		return False

@@ -9,7 +9,6 @@ from datetime import datetime
 from datetime import time
 from django.contrib import auth
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
-import simplejson
 
 # from django.template import RequestContext
 # from django.core.context_processors import csrf
@@ -18,15 +17,11 @@ import simplejson
 def index(request):
     good_booklist = ssl_table.objects.all()
     ssl_en_list = ssl_en_table.objects.all()
-    print "index.html user:"
-    print request.user
     if request.user.is_authenticated():
-    	#print request.user
-    	print 'authenticate'
-    	return render_to_response('index.html',{'good_book_list':good_booklist,'ssl_en_list':ssl_en_list,'login_user':request.user.nickname})
+    	#print 'authenticate'
+    	return render_to_response('index.html',{'good_book_list':good_booklist,'ssl_en_list':ssl_en_list,'login_user':request.user.username})
     else:
-    	#print request.user
-    	print 'logout'
+    	#print 'logout'
     	auth.logout(request)
     	return render_to_response('index.html',{'good_book_list':good_booklist,'ssl_en_list':ssl_en_list})
     # 
@@ -91,9 +86,6 @@ def regAction(request):
 			user = ssl_users.objects.create_user(username=username,password=password,email=email,nickname=username)
 			if phone is not None:
 				user.mobilephone = phone
-			# if not user.is_valid_user():
-			# 	print "invalid"
-			# 	return render_to_response('reg/index.html')
 			user.is_active = True
 			user.save
 			request.user = user
@@ -108,16 +100,28 @@ def login_index(request):
 def loginAction(request):
 	errors = []
 	user = None
-	curtime=datetime.now().strftime("%Y-%m-%d %H:%M:%S");
-	# print curtime
+	result = False
 
 	if request.method=='POST':
 		username=request.POST.get('username','')
 		password=request.POST.get('password','')
-		user = auth.authenticate(username=username,password=password)        
-        if user is not None and user.is_active:
+		print "login-username:"+username
+		user = auth.authenticate(username=username,password=password)
+		if user is not None and user.is_active:
 			auth.login(request, user)
-			print user
+			result = True
+		elif user is None:
+			filterResults = ssl_users.objects.filter(mobilephone=username)
+			if len(filterResults) == 0:
+				filterResults = ssl_users.objects.filter(email=username)
+			
+			if len(filterResults) > 0:	
+				user = filterResults[0]	      
+			if user is not None and user.check_password(password) and user.is_active:
+				print user
+				auth.login(request, user)
+				result = True
+        if result:
 			print 'login success'
 			return HttpResponseRedirect("/index.html")
 	errors.append('用户名或密码错误')

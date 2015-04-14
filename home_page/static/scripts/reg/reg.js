@@ -68,17 +68,17 @@ $(document).ready(function(){
 		vfcpassword();
 	});
 
+	// $("#btnNext").click(function(){
+	// 	alert("submit");
+	// });
 	$("#btnNext").click(function(){
-		//alert("submit");
-		if(vfname()&&vfpassword&&vfcpassword){
-			if($("#mobileReg").hasClass("active")&&vfphone()){
-				$("#email").val("");
-				$("#reg-form").submit();
-			}else if($("#emailReg").hasClass("active")&&vfemail()){
-				$("#phone").val("");
-				$("#reg-form").submit();
-			}		
-		}
+		if($("#mobileReg").hasClass("active")){
+			$("#email").val("");
+			$("#reg-form").submit();
+		}else if($("#emailReg").hasClass("active")){
+			$("#phone").val("");
+			$("#reg-form").submit();
+		}	
 	});
 });
 
@@ -103,18 +103,16 @@ function vfname(){
 			//alert(JSON.stringify(data));
 			if(data['msg']){
 				change_username({'result':true});
-				return true;
 			}else{
 				change_username({'result':false,'wrong_msg':"用户名已存在"});
-				return false;
 			}
 		},
 		error:function (data) {
 			//alert(JSON.stringify(data));
 			change_username({'result':false,'wrong_msg':"用户名无效"});
-			return false;
 		},
 	});
+	return true;
 }
 
 function change_username(data){
@@ -156,18 +154,16 @@ function vfphone(){
 			//alert(JSON.stringify(data));
 			if(data['msg']){
 				change_phone({'result':true});
-				return true;
 			}else{
 				change_phone({'result':false,'wrong_msg':"该手机号码已注册"});
-				return false;
 			}
 		},
 		error:function (data) {
 			alert(JSON.stringify(data));
 			change_phone({'result':false,'wrong_msg':"请输入正确的手机号码"});
-			return false;
 		},
 	});
+	return true;
 }
 
 function change_phone(data){
@@ -201,18 +197,16 @@ function vfemail(){
 			//alert(JSON.stringify(data));
 			if(data['msg']){
 				change_email({'result':true});
-				return true;
 			}else{
 				change_email({'result':false,'wrong_msg':"该邮箱已注册"});
-				return false;
 			}
 		},
 		error:function (data) {
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			change_email({'result':false,'wrong_msg':"邮箱输入有误"});
-			return false;
 		},
 	});
+	return true;
 }
 
 function change_email(data){

@@ -51,7 +51,6 @@ def regAction(request):
 		else:
 			email = request.POST.get('email')
 
-
 		if not request.POST.get('password'):
 			errors.append('密码有误')
 		else:
@@ -83,11 +82,12 @@ def regAction(request):
 
 			# user input verify
 			print username
+			print phone
 			user = ssl_users.objects.create_user(username=username,password=password,email=email,nickname=username)
 			if phone is not None:
 				user.mobilephone = phone
 			user.is_active = True
-			user.save
+			user.save()
 			request.user = user
 			return index(request)
 
@@ -119,6 +119,7 @@ def loginAction(request):
 				user = filterResults[0]	      
 			if user is not None and user.check_password(password) and user.is_active:
 				print user
+				user = auth.authenticate(username=user.username,password=password)
 				auth.login(request, user)
 				result = True
         if result:

@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^regAction/','home_page.views.regAction'),
     url(r'^loginAction/','home_page.views.loginAction'),
     url(r'^loginout/','home_page.views.logoutAction'),
-    url(r'^check-username','ssl_user.views.checkUsername'),
+    url(r'^check-user','ssl_user.views.checkUser'),
     url(r'^show_item_detail','home_page.views.show_item_detail'),
     url(r'$','home_page.views.index'),
 )

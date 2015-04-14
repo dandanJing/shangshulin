@@ -9,10 +9,21 @@ import simplejson
 # from django.core.context_processors import csrf
 
 # Create your views here.
-def checkUsername(request):
+def checkUser(request):
 	req = simplejson.loads(request.body)
-	username = req['username']
-	filterResults = ssl_users.objects.filter(username=username)
+	print req
+
+	filterResults = []
+	if req.has_key('username'):
+		username = req['username']
+		filterResults = ssl_users.objects.filter(username=username)
+	elif req.has_key('phone'):
+		phone = req['phone']
+		filterResults = ssl_users.objects.filter(mobilephone=phone)
+	elif req.has_key('email'):
+		email = req['email']
+		filterResults = ssl_users.objects.filter(email=email)
+
 	dict1 = {}
 	#json_data = serializers.serialize("json", {"code":200,"msg":True})
 	if len(filterResults)>0:

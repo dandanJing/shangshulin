@@ -92,7 +92,7 @@ function vfname(){
 	}
 
 	$.ajax({
-		url:"/check-username",
+		url:"/check-user",
 		type:"post",
 		dataType:"json",
 		data:JSON.stringify({
@@ -110,6 +110,7 @@ function vfname(){
 			}
 		},
 		error:function (data) {
+			//alert(JSON.stringify(data));
 			change_username({'result':false,'wrong_msg':"用户名无效"});
 			return false;
 		},
@@ -130,45 +131,100 @@ function change_username(data){
 
 function vfphone(){
 	var text = $("#phone").val();
-	var result = false;
+	var result = true;
 	
 	if(text.length!=11){
 		result = false;
 	} else if(text.search(/^[0-9]+$/)==-1){
 		result = false;
-	} else{
-		result = true;
+	} 
+
+	if(!result){
+		change_phone({'result':false,'wrong_msg':"请输入正确的手机号码"});
+		return result;
 	}
-	if(result){
+
+	$.ajax({
+		url:"/check-user",
+		type:"post",
+		dataType:"json",
+		data:JSON.stringify({
+			'phone':text
+		}),
+		contentType:'application/json;charset=UTF-8',
+		success:function (data) {
+			//alert(JSON.stringify(data));
+			if(data['msg']){
+				change_phone({'result':true});
+				return true;
+			}else{
+				change_phone({'result':false,'wrong_msg':"该手机号码已注册"});
+				return false;
+			}
+		},
+		error:function (data) {
+			alert(JSON.stringify(data));
+			change_phone({'result':false,'wrong_msg':"请输入正确的手机号码"});
+			return false;
+		},
+	});
+}
+
+function change_phone(data){
+	if(data["result"]){
 		$("#phone_Tip").removeAttr("class");
 		$("#phone_Tip").toggleClass("success");
 		$("#phone_Tip").children().html("");
-	} else {
+	}else{
 		$("#phone_Tip").removeAttr("class");
 		$("#phone_Tip").toggleClass("wrong");
-		$("#phone_Tip").children().html("请输入正确的手机号码");
+		$("#phone_Tip").children().html(data['wrong_msg']);
 	}
-	return result;
 }
 
 function vfemail(){
 	var text = $("#email").val();
-	var result = false;
 	if (text.search(/^[_/.a-z0-9]+@[a-z0-9]+[/.][a-z0-9]{2,}$/i)==-1) {
-		result = false;
-	} else {
-		result = true;
-	}
-	if(result){
+		change_email({'result':false,'wrong_msg':"邮箱输入有误"});
+		return false;
+	} 
+
+	$.ajax({
+		url:"/check-user",
+		type:"post",
+		dataType:"json",
+		data:JSON.stringify({
+			'email':text
+		}),
+		contentType:'application/json;charset=UTF-8',
+		success:function (data) {
+			//alert(JSON.stringify(data));
+			if(data['msg']){
+				change_email({'result':true});
+				return true;
+			}else{
+				change_email({'result':false,'wrong_msg':"该邮箱已注册"});
+				return false;
+			}
+		},
+		error:function (data) {
+			alert(JSON.stringify(data));
+			change_email({'result':false,'wrong_msg':"邮箱输入有误"});
+			return false;
+		},
+	});
+}
+
+function change_email(data){
+	if(data["result"]){
 		$("#email_Tip").removeAttr("class");
 		$("#email_Tip").toggleClass("success");
 		$("#email_Tip").children().html("");
-	} else {
+	}else{
 		$("#email_Tip").removeAttr("class");
 		$("#email_Tip").toggleClass("wrong");
-		$("#email_Tip").children().html("您输入的邮箱有误");
+		$("#email_Tip").children().html(data['wrong_msg']);
 	}
-	return result;
 }
 
 function vfpassword(){

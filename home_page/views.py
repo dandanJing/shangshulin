@@ -9,6 +9,7 @@ from datetime import datetime
 from datetime import time
 from django.contrib import auth
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
+import simplejson
 
 # from django.template import RequestContext
 # from django.core.context_processors import csrf
@@ -125,12 +126,6 @@ def loginAction(request):
 def logoutAction(request):
 	auth.logout(request)
 	return render_to_response('index.html')
-
-def regSearchAction(request):
-	print request.method
-	user = ssl_users.objects.filter(username="")
-	json_data = serializers.serialize("json", ssl_users.objects.all())
-	return HttpResponse(json_data,content_type="application/json")
 
 def show_item_detail(request):
 	print "show_item_detail"

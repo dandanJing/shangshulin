@@ -84,7 +84,13 @@ $(document).ready(function(){
 
 function vfname(){
 	var text = $("#username").val();
-	var result = false;
+
+	//检查用户名长度
+	if(!(text.length>=4 && text.length<=20)){
+		change_username({'result':false,'wrong_msg':"用户名无效"});
+		return false;
+	}
+
 	$.ajax({
 		url:"/check-username",
 		type:"post",
@@ -94,27 +100,32 @@ function vfname(){
 		}),
 		contentType:'application/json;charset=UTF-8',
 		success:function (data) {
-			alert(data);
+			//alert(JSON.stringify(data));
+			if(data['msg']){
+				change_username({'result':true});
+				return true;
+			}else{
+				change_username({'result':false,'wrong_msg':"用户名已存在"});
+				return false;
+			}
 		},
-		error:function (msg) {
-			alert(msg.responseText);
+		error:function (data) {
+			change_username({'result':false,'wrong_msg':"用户名无效"});
+			return false;
 		},
 	});
-	if(text.length>=4 && text.length<=20){
-		result = true;
-	} else{
-		result = false;
-	}
-	if(result){
+}
+
+function change_username(data){
+	if(data["result"]){
 		$("#username_Tip").removeAttr("class");
 		$("#username_Tip").toggleClass("success");
 		$("#username_Tip").children().html("");
 	}else{
 		$("#username_Tip").removeAttr("class");
 		$("#username_Tip").toggleClass("wrong");
-		$("#username_Tip").children().html("您输入的用户名无效");
+		$("#username_Tip").children().html(data['wrong_msg']);
 	}
-	return result;
 }
 
 function vfphone(){

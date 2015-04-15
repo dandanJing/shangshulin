@@ -210,6 +210,12 @@ a:hover{
     font-family: "宋体";
 }
 
+.return-home{
+    display: inline;
+    float: left;
+    margin-right: 10px;
+}
+
 #my_menu{
     float: left;
     height:27px;
@@ -506,6 +512,19 @@ a:hover #fabu{
     overflow:hidden;
 }
 
+#delinfo{
+    position:absolute;
+    top:52px;
+    right:30px;
+    color:#666;
+    margin-top: 5px;
+}
+
+.search-fix .search-no{
+    display:none;
+    visibility:hidden;
+}
+
 .content{
     width: 1000px;
     margin-top: 10px;
@@ -712,12 +731,17 @@ a:hover #fabu{
     overflow: hidden;
     width: 58px;
     height: 40px;
-    margin-right: 5px;
+    margin-right: 4px;
     padding: 1px 0;
     list-style: none;
     text-align: center;
     border: 1px solid #e0e0e0;
     background: #fff;
+}
+
+.item_thumb ul .active{
+    padding: 0;
+    border: 2px solid #ef7d49;
 }
 
 .icon_left, .icon_right {
@@ -752,6 +776,11 @@ a:hover #fabu{
     margin-top: 7px;
 }
 
+.imgs_small li img{
+    width: 50px;
+    height: 40px;
+    overflow: hidden;
+}
 .item-summary{
     float: left;
     width: 350px;

@@ -1,6 +1,7 @@
 #encoding=utf-8
 from django.db import models 
 from django.contrib.auth.models import AbstractUser
+from datetime import datetime
 
 # Create your models here.
 class user_items_table(models.Model):
@@ -23,9 +24,9 @@ class ssl_table(models.Model):
 	itemsnum = models.IntegerField('itemsNum')
 	itemimageurl = models.CharField('itemImageUrl',max_length=200)
 	lookCount = models.IntegerField('lookCount',default = 0)
-	postTime = models.IntegerField('postTime',default = 0)
-	lastEditTime = models.IntegerField('lastEditTime',default = 0)
-	isBlock = models.IntegerField('isBlock', default=0)
+	postTime = models.DateTimeField('postTime',default = datetime.now())
+	lastEditTime = models.DateTimeField('lastEditTime',default = datetime.now())
+	isBlock = models.BooleanField('isBlock', default=True)
 	username = models.CharField('username',max_length=100,default="尚书林")
 	feature = models.CharField('feature',max_length=100,default="全新")
 

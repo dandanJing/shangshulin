@@ -2,6 +2,7 @@
 from django.shortcuts import render_to_response
 from home_page.models import user_items_table
 from home_page.models import ssl_table
+from home_page.models import ssl_images_table
 from home_page.models import ssl_en_table
 from home_page.models import ssl_users
 from django.http import HttpResponseRedirect
@@ -136,13 +137,16 @@ def show_item_detail(request):
 	if request.method=='GET':
 		itemid = request.GET.get('id','')
 		item_data = ssl_table.objects.filter(itemid = itemid)
+		item_images = ssl_images_table.objects.filter(itemid = itemid)
 		if request.user.is_authenticated():
 			user = request.user
 		else:
 			user = None
 		if len(item_data) > 0:
+			item_data[0].lookCount=item_data[0].lookCount+1
+			item_data[0].save()
 			seller = ssl_users.objects.filter(username=item_data[0].username)
-			return render_to_response('show_items/item_detail.html',{'item_detail':item_data,'login_user':user,'seller':seller,'mobilephone':int(seller[0].mobilephone)/10000})
+			return render_to_response('show_items/item_detail.html',{'item_detail':item_data,'login_user':user,'seller':seller,'mobilephone':int(seller[0].mobilephone)/10000,'item_images':item_images})
 	return render_to_response('index.html')
 
 class RegistrationForm(Form):

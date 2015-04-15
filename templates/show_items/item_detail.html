@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/styles/item_detail/item_detail.css">
     <script language="javascript"  src="/static/scripts/jquery-1.11.2.min.js" type="text/javascript"></script>
     <script src="/static/scripts/jquery.alerts.js" type="text/javascript"></script>
+    <script src="/static/scripts/item_detail/item_detail.js" type="text/javascript"></script>
 </head>
 <body class = "homebody">
 	<div id = "topbar">
@@ -28,6 +29,7 @@
                 </div>
             </div>
             <div class="bar_right">
+                <div class="return-home"><a href="/">首页</a>&nbsp;&nbsp;|</div>
                 <div id="my_menu" class="">
                     <a id="to_my_menu" href="" target="_self">我的尚书</a>
                     <span class="arrow"></span>
@@ -72,7 +74,6 @@
             </form>
             <a href="http://post.58.com/1/" id="fabu" rel="nofollow"><i></i>发布闲置</a>
             <a href="http://about.58.com/info/del-menu.html" id="delinfo" rel="nofollow" class="search-no">修改<i>/</i>删除信息</a>
-            <a id="delinfo" href="http://about.58.com/info/del-menu.html?from=home" rel="nofollow" class="search-no" title="可删除手机号被冒用发布的信息" onclick="_gaq.push(['pageTracker._trackEvent', 'home', 'click', 'info_del']);">修改/删除信息</a>
         </div>
     </div>
     <div class="content">
@@ -115,16 +116,17 @@
     				</div>
     			</div>
     			<div class="item-imgs">
-    				<div class="item_image">
-    					<span><img src="/static/images/good_items/{{item_detail.0.itemimageurl}}"></span>
+    				<div class="item_image" id = "show-img">
+    					<span><img src="/static/images/good_items/{{item_images.0.itemimageurl}}"></span>
     				</div>
     				<div class="item_thumb">
     					<a href="#" id="img_scrollLeft" class="icon_left"></a>
     					<a href="#" id="img_scrollRight" class="icon_right"></a>
     					<div class="thumb_main">
-    						<ul class="imgs_small">
-    							<li><img src="/static/images/good_items/detail_1.jpg"></li>
-    							<li><img src="/static/images/good_items/detail_2.jpg"></li>
+    						<ul class="imgs_small" id = "small-imgs">
+                                {% for image_each in item_images %}
+    							<li><img src="/static/images/good_items/{{image_each.itemimageurl}}"></li>
+                                {% endfor %}
     						</ul>
     					</div>
     				</div>		
@@ -186,6 +188,7 @@
     			</div>
     			<div class="owner-post">
     				<p>发布闲置5条</p>
+                    <p>成功出售3次</p>
     				<p>评论4条</p>
     				<p>评分4.8分</p>
     			</div>

@@ -71,6 +71,8 @@
                 </div>
             </form>
             <a href="http://post.58.com/1/" id="fabu" rel="nofollow"><i></i>发布闲置</a>
+            <a href="http://about.58.com/info/del-menu.html" id="delinfo" rel="nofollow" class="search-no">修改<i>/</i>删除信息</a>
+            <a id="delinfo" href="http://about.58.com/info/del-menu.html?from=home" rel="nofollow" class="search-no" title="可删除手机号被冒用发布的信息" onclick="_gaq.push(['pageTracker._trackEvent', 'home', 'click', 'info_del']);">修改/删除信息</a>
         </div>
     </div>
     <div class="content">
@@ -84,11 +86,11 @@
     					<ul class="mini-menu-left">
     						<li class="browse">
     							<h5>宝贝浏览次数</h5>
-    							<span>100</span>
+    							<span>{{item_detail.0.lookCount}}</span>
     						</li>
     						<li>
     							<h5>最近编辑</h5>
-    							<span>2015-04-13 15:02</span>
+    							<span>{{item_detail.0.lastEditTime}}</span>
     						</li>
     					</ul>
     					<div class="mini-menu-right">
@@ -139,22 +141,26 @@
 						</li>
 						<li >
 							<div class="sub_title">成&nbsp;&nbsp;色：</div>
-							<div class="sub_content">全新</div>
+							<div class="sub_content">{{item_detail.0.feature}}</div>
 						</li>
 						<li class="new-col">
 							<div class="sub_title">卖&nbsp;&nbsp;家：</div>
-							<div class="sub_content seller">尚书林</div>
+							<div class="sub_content seller">{{item_detail.0.username}}</div>
 						</li>
+						{%  if mobilephone %}
 						<li>
 							<div class="sub_title">联&nbsp;&nbsp;系：</div>
-							<div class="sub_content seller-phone">1810136****
+							<div class="sub_content seller-phone">{{mobilephone}}****
 								<span class="show_num" onclick="clickLog('from=ES_detail_viewcontact');">查看完整号码</span>
 							</div>
 						</li>
+						{% endif %}
+						{%  if seller %}
 						<li>
 							<div class="sub_title">Q&nbsp;&nbsp;Q：</div>
-							<div class="sub_content">1544299536</div>
+							<div class="sub_content">{{seller.0.qq}}</div>
 						</li>
+						{% endif %}
 						<li>
 							<div class="sub_title">咨&nbsp;&nbsp;询：</div>
 							<span id="talk_btn" onclick="clickLog('from=ES_bangbang_message');">
@@ -186,8 +192,8 @@
     		</div>
     		<div class="body-detail">
 				<div class="detail-title">
-					<span id="detail-para" class="active"><a>宝贝参数</a></span>
-					<span id="detail-cont"><a>宝贝详情</a></span>
+					<!-- <span id="detail-para" class="active"><a>宝贝参数</a></span> -->
+					<span id="detail-cont" class="active"><a>宝贝详情</a></span>
 					<span id="detail-talk"><a>留言(5)</a></span>
 				</div>
 			</div>

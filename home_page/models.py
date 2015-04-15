@@ -22,7 +22,12 @@ class ssl_table(models.Model):
 	itemprice = models.IntegerField('itemPrice')
 	itemsnum = models.IntegerField('itemsNum')
 	itemimageurl = models.CharField('itemImageUrl',max_length=200)
-	itemimagetable = models.CharField('itemImageTable',max_length=100)
+	lookCount = models.IntegerField('lookCount',default = 0)
+	postTime = models.IntegerField('postTime',default = 0)
+	lastEditTime = models.IntegerField('lastEditTime',default = 0)
+	isBlock = models.IntegerField('isBlock', default=0)
+	username = models.CharField('username',max_length=100,default="尚书林")
+	feature = models.CharField('feature',max_length=100,default="全新")
 
 class ssl_en_table(models.Model):
 	itemid = models.CharField('itemId',max_length=100, unique=True)
@@ -35,6 +40,7 @@ class ssl_en_table(models.Model):
 
 class ssl_users(AbstractUser):
 	mobilephone = models.CharField('mobilephone',max_length=20,default="")
+	qq = models.IntegerField('qq',default=0)
 	nickname = models.CharField('nickname',max_length=20)
 
 	def __str__(self):
@@ -42,3 +48,7 @@ class ssl_users(AbstractUser):
 	
 	def is_valid_user(self):
 		return False
+
+class ssl_images_table(models.Model):
+	itemid = models.CharField('itemId',max_length=100)
+	itemimageurl = models.CharField('itemImageUrl',max_length=200)

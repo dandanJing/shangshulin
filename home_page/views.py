@@ -130,12 +130,19 @@ def loginAction(request):
 
 def logoutAction(request):
 	auth.logout(request)
-	return render_to_response('index.html')
+	return index(request)
 
 def show_item_detail(request):
 	if request.method=='GET':
 		itemid = request.GET.get('id','')
-		return render_to_response('show_items/item_detail.html',{'item_detail':ssl_table.objects.filter(itemid = itemid)})
+		item_data = ssl_table.objects.filter(itemid = itemid)
+		if request.user.is_authenticated():
+			user = request.user
+		else:
+			user = None
+		if len(item_data) > 0:
+			seller = ssl_users.objects.filter(username=item_data[0].username)
+			return render_to_response('show_items/item_detail.html',{'item_detail':item_data,'login_user':user,'seller':seller,'mobilephone':int(seller[0].mobilephone)/10000})
 	return render_to_response('index.html')
 
 class RegistrationForm(Form):

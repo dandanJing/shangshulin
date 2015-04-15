@@ -54,7 +54,7 @@
     </div>
     <div id = "header">
         <div id="headerinside">
-            <a href="http://bj.58.com" target="_self" id="logo" onclick="clickLog('from=sylogo_bj');"><img src="/static/images/logo.gif" alt="中文最大生活信息门户" title="58同城，让生活更简单" width="188" height="50"></a>
+            <a href="/" target="_self" id="logo" onclick="clickLog('from=sylogo_bj');"><img src="/static/images/logo.gif" alt="中文最大生活信息门户" title="58同城，让生活更简单" width="188" height="50"></a>
             <div id="1002" class="search-no" style="display:none"> 
                 <a onclick="_gaq.push(['pageTracker._trackEvent', 'home', 'adv_click', '/home/adv/1002/bj']);clickLog('from=home_adv_1002_bj&amp;ToUrl=http://static.58.com/ds/other/weixinExtend/huodong_v7.html?from=indexmini');" style="background-image:url(http://pic2.58.com/ui6/index/mini_mq5000.gif);width:143px;height:46px;" class="embed03" href="http://static.58.com/ds/other/weixinExtend/huodong_v7.html?from=indexmini" rel="nofollow"></a>             
             </div>
@@ -112,15 +112,85 @@
     					</div>
     				</div>
     			</div>
+    			<div class="item-imgs">
+    				<div class="item_image">
+    					<span><img src="/static/images/good_items/{{item_detail.0.itemimageurl}}"></span>
+    				</div>
+    				<div class="item_thumb">
+    					<a href="#" id="img_scrollLeft" class="icon_left"></a>
+    					<a href="#" id="img_scrollRight" class="icon_right"></a>
+    					<div class="thumb_main">
+    						<ul class="imgs_small">
+    							<li><img src="/static/images/good_items/detail_1.jpg"></li>
+    							<li><img src="/static/images/good_items/detail_2.jpg"></li>
+    						</ul>
+    					</div>
+    				</div>		
+				</div>
+				<div class="item-summary">
+					<ul class="summary">
+						<li>
+							<div class="sub_title">出&nbsp;&nbsp;手：</div>
+							<div class="sub_content"><span class="price">{{item_detail.0.itemprice}}</span>元</div>
+						</li>
+						<li>
+							<div class="sub_title">原&nbsp;&nbsp;价：</div>
+							<div class="sub_content">{{item_detail.0.itemcostprice}}元</div>
+						</li>
+						<li >
+							<div class="sub_title">成&nbsp;&nbsp;色：</div>
+							<div class="sub_content">全新</div>
+						</li>
+						<li class="new-col">
+							<div class="sub_title">卖&nbsp;&nbsp;家：</div>
+							<div class="sub_content seller">尚书林</div>
+						</li>
+						<li>
+							<div class="sub_title">联&nbsp;&nbsp;系：</div>
+							<div class="sub_content seller-phone">1810136****
+								<span class="show_num" onclick="clickLog('from=ES_detail_viewcontact');">查看完整号码</span>
+							</div>
+						</li>
+						<li>
+							<div class="sub_title">Q&nbsp;&nbsp;Q：</div>
+							<div class="sub_content">1544299536</div>
+						</li>
+						<li>
+							<div class="sub_title">咨&nbsp;&nbsp;询：</div>
+							<span id="talk_btn" onclick="clickLog('from=ES_bangbang_message');">
+            					<img id="img_talk" name="icon_talk" width="82px" height="26px" src="/static/images/good_items/online.gif">
+        					</span>
+						</li>
+						<li>
+							<div class="sub_title">其&nbsp;&nbsp;他：</div>
+							<div class="sub_content">24位用户发布了相似物品</div>
+						</li>
+					</ul>
+				</div>
     		</div>
     		<div class="body-right">
     			<div class="owner-image">
     				<div class="own-image">
-    					<i class="cir_img"></i>
-    					<img src="http://pic2.58.com/images/user/5_0/default_b.jpg">
+    					<!-- <i class="cir_img"></i> -->
+    					<img src="/static/images/ssl-icon.ico">
+    					<p>尚书林</p>
     				</div> 				
     			</div>
+    			<div class="owner-auth">
+    			</div>
+    			<div class="owner-post">
+    				<p>发布闲置5条</p>
+    				<p>评论4条</p>
+    				<p>评分4.8分</p>
+    			</div>
     		</div>
+    		<div class="body-detail">
+				<div class="detail-title">
+					<span id="detail-para" class="active"><a>宝贝参数</a></span>
+					<span id="detail-cont"><a>宝贝详情</a></span>
+					<span id="detail-talk"><a>留言(5)</a></span>
+				</div>
+			</div>
     	</div>
     	{% else %}
     	{% endif %}

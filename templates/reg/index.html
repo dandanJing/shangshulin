@@ -20,7 +20,7 @@
 		<div class="header-title">用户注册</div>
         <div class="steps">
             <ol>
-                {% if user %}
+                {% if user or is_success%}
                 <li>
                 {% else %}
                 <li class="active">
@@ -36,7 +36,11 @@
                     <i>2</i>
                     <span class="step2">完善基本资料</span>
                 </li>
+                {% if is_success %}
+                <li class="active">
+                {% else %}
                 <li>
+                {% endif %}
                     <i class="step-finish">3</i>
                     <span class="step3">注册成功</span>
                 </li>
@@ -46,18 +50,18 @@
 			<a href="/">返回首页</a>
 		</div>
 	</div>
-    {% if not user %}
+    {% if user %}
     <div class="user-info">
         <div class="info-body">
             <form id="reg-user-info-form" action="/reg-user-info/" method="post">
                 <div class="infoWrap">
                     <div class="info-block">
                         <span class="info-title">用&nbsp;户&nbsp;名:</span>
-                        <span class="info-username">fasfasfa{{user.username}}</span>
+                        <span class="info-username">{{user.username}}</span>
                     </div>
                     <div class="info-block">
                         <span class="info-title">手&nbsp;&nbsp;机:</span>
-                        <input id="phone" class="inp inw" type="text" name="phone" value="13107125058{{user.mobilephone}}" size="20">
+                        <input id="phone" class="inp inw" type="text" name="phone" value="{{user.mobilephone}}" size="20">
                         </input>
                     </div>
                     <div class="info-block">
@@ -67,7 +71,7 @@
                     </div>
                     <div class="info-block">
                         <span class="info-title">身&nbsp;&nbsp;份:</span>
-                        <input id="status" class="status-radio" type="radio" name="is-student" value="0" checked>学生
+                        <input id="status" class="status-radio" type="radio" name="is-student" value="1" checked>学生
                         </input>
                         <input id="status" class="status-radio" type="radio" name="is-student" value="0">其他
                         </input>
@@ -80,6 +84,7 @@
         </div>
     </div>
     {% else %}
+    {% if not is_success %}
 	<div class="content">
 		{%  if errors %}
 		<div class="errors">
@@ -165,6 +170,12 @@
 			</div>					
 		</form>
 	</div>
+     {% else %}
+     <div class="success-content">
+        <div class="remind-box"><span><p>恭喜您，注册成功</p></span></div>
+        <div class="success-return"><a href="/">回到首页</a></div>
+     </div>
+     {% endif %}
      {% endif %}
 	<div class="footer"></div>
 </body>

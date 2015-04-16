@@ -46,3 +46,24 @@ def getUserByUsername(request):
 		dict1["phone"] = filterResults[0].mobilephone
 	json_data = simplejson.dumps(dict1)
 	return HttpResponse(json_data,content_type="application/json")
+
+def regUserInfo(request):
+	phone = None
+	qq = None
+	is_student = None
+	errors=[]
+
+	if request.method == 'POST':
+		phone = request.POST.get('phone')
+		qq = request.POST.get('qq')
+		is_student = request.POST.get('is-student')
+		
+		if request.user.is_authenticated():
+			print request.user
+			request.user.mobilephone = phone
+			request.user.qq = qq
+			request.user.is_student = is_student
+			request.user.save()	
+			return render_to_response('reg/index.html',{'is_success':True})
+
+	return render_to_response('reg/index.html')

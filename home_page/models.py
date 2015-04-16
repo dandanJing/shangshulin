@@ -35,6 +35,7 @@ class ssl_users(AbstractUser):
 	mobilephone = models.CharField('mobilephone',max_length=20,default="")
 	qq = models.IntegerField('qq',default=0)
 	nickname = models.CharField('nickname',max_length=20)
+	is_student = models.BooleanField('is_student',default=True)
 
 	def __str__(self):
 		return "username:%s\tphone:%s\temail:%s\t"%(self.username,self.mobilephone,self.email)

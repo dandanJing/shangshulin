@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^check-user','ssl_user.views.checkUser'),
     url(r'^show_item_detail','home_page.views.show_item_detail'),
     url(r'^get-user-for-username','ssl_user.views.getUserByUsername'),
+    url(r'^reg-user-info/','ssl_user.views.regUserInfo'),
     url(r'$','home_page.views.index'),
 )

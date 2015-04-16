@@ -80,6 +80,10 @@ $(document).ready(function(){
 			$("#reg-form").submit();
 		}	
 	});
+
+	$("#info-btn").click(function(){
+		$("#reg-user-info-form").submit();
+	});
 });
 
 function vfname(){

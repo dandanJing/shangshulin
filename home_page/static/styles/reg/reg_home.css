@@ -373,3 +373,33 @@ a{
 	margin: 0px;
 	margin-left: 126px;
 }
+
+.success-content{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+.remind-box{
+	margin-top: 35px;
+	height: 55px;
+	background-color: #85e;
+	padding-top: 2px;
+}
+
+.remind-box span{
+	color: #eee;
+	font-size: 18px;
+	text-align: center;
+}
+
+.success-return{
+	text-align: center;
+	margin-top: 18px;
+}
+
+.success-return a{
+	color: #555;
+	font-size: 15px;
+	text-decoration:underline;
+}

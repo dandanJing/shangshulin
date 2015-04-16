@@ -688,25 +688,25 @@ a:hover #fabu{
     overflow: hidden;
     width: 300px;
     height: 225px;
-    padding: 2px;
-    table-layout: fixed;
     text-align: center;
     color: #999;
     border-bottom: 1px solid #e0e0e0;
     background: #fff;
+    /*background-color: #000;*/
 }
 
 .item_image span{
     overflow: hidden;
     vertical-align: middle;
+    padding: auto;
+    margin: auto;
 }
 
 .item_image span img{
     overflow: hidden;
     max-width: 300px;
     max-height: 225px;
-    vertical-align: middle;
-    margin: 0;
+    vertical-align: center;
 }
 
 .item_thumb{
@@ -781,6 +781,7 @@ a:hover #fabu{
     height: 40px;
     overflow: hidden;
 }
+
 .item-summary{
     float: left;
     width: 350px;

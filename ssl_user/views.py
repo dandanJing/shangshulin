@@ -11,7 +11,7 @@ import simplejson
 # Create your views here.
 def checkUser(request):
 	req = simplejson.loads(request.body)
-	print req
+	#print req
 
 	filterResults = []
 	if req.has_key('username'):
@@ -32,5 +32,17 @@ def checkUser(request):
 	else:
 		dict1['code']= 200
 		dict1['msg'] = True
+	json_data = simplejson.dumps(dict1)
+	return HttpResponse(json_data,content_type="application/json")
+
+def getUserByUsername(request):
+	req = simplejson.loads(request.body)
+	filterResults = []
+	dict1 = {"phone":""}
+	if req.has_key('username'):
+		username = req['username']
+		filterResults = ssl_users.objects.filter(username=username)
+	if len(filterResults) > 0:
+		dict1["phone"] = filterResults[0].mobilephone
 	json_data = simplejson.dumps(dict1)
 	return HttpResponse(json_data,content_type="application/json")

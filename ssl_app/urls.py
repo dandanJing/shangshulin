@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     url(r'^loginout/','home_page.views.logoutAction'),
     url(r'^check-user','ssl_user.views.checkUser'),
     url(r'^show_item_detail','home_page.views.show_item_detail'),
+    url(r'^get-user-for-username','ssl_user.views.getUserByUsername'),
     url(r'$','home_page.views.index'),
 )

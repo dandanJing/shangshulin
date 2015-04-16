@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'home_page',
     'wtforms',
     'ssl_user',
+    'items_app',
 )
 
 MIDDLEWARE_CLASSES = (

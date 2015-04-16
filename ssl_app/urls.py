@@ -18,5 +18,6 @@ urlpatterns = patterns('',
     url(r'^show_item_detail','home_page.views.show_item_detail'),
     url(r'^get-user-for-username','ssl_user.views.getUserByUsername'),
     url(r'^reg-user-info/','ssl_user.views.regUserInfo'),
+    url(r'^publish-item','items_app.views.publish_item'),
     url(r'$','home_page.views.index'),
 )

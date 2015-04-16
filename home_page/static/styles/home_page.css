@@ -384,7 +384,7 @@ a:hover{
 
 #searchbar{
     position:absolute;
-    left:407px;
+    left:507px;
     top:11px;
     line-height:26px;
     overflow:hidden;
@@ -754,7 +754,7 @@ a:hover #fabu{
 
 .extend{
     height: 70px;
-    background-color: #f4f4f4;
+    background-color: #fff;
 }
 
 .idle-start .extend .mod{
@@ -767,21 +767,24 @@ a:hover #fabu{
 .idle-start .extend .mod a{
     display: block;
     padding: 5px 0;
-    border:1px solid #efefef;
+    border:1px solid #f4a38c;
     margin-left: 9px;
     margin-top: 6px;
     text-align: center;
     background-color: #fff;
 }
 
+.idle-start .extend .mod a:hover{
+    text-decoration: underline #888;
+}
+
 .idle-start .extend .mod a .main-title{
     display: inline-block;
-    padding-right: 20px;
+    padding:0 15px;
     margin-bottom: 5px;
     font-size: 18px;
     font-weight: 700;
-    color: #333;
-    background: url(http://gtms03.alicdn.com/tps/i3/TB1Bf4pFVXXXXcvXpXX1ka_.VXX-91-199.png) no-repeat 85px -99px;
+    color: #444;
 }
 
 .idle-start .extend .mod a .subtitle {

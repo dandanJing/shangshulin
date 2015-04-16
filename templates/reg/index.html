@@ -18,20 +18,78 @@
 			<img src="/static/images/logo.gif" alt="尚书林">
 		</a>
 		<div class="header-title">用户注册</div>
+        <div class="steps">
+            <ol>
+                {% if user %}
+                <li>
+                {% else %}
+                <li class="active">
+                {% endif %}
+                    <i>1</i>
+                    <span class="step1">设置用户名</span>
+                </li>
+                {% if user %}
+                <li class="active">
+                {% else %}
+                <li>
+                {% endif %}
+                    <i>2</i>
+                    <span class="step2">完善基本资料</span>
+                </li>
+                <li>
+                    <i class="step-finish">3</i>
+                    <span class="step3">注册成功</span>
+                </li>
+            </ol>
+        </div>
 		<div class="return-home">
 			<a href="/">返回首页</a>
 		</div>
 	</div>
+    {% if not user %}
+    <div class="user-info">
+        <div class="info-body">
+            <form id="reg-user-info-form" action="/reg-user-info/" method="post">
+                <div class="infoWrap">
+                    <div class="info-block">
+                        <span class="info-title">用&nbsp;户&nbsp;名:</span>
+                        <span class="info-username">fasfasfa{{user.username}}</span>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-title">手&nbsp;&nbsp;机:</span>
+                        <input id="phone" class="inp inw" type="text" name="phone" value="13107125058{{user.mobilephone}}" size="20">
+                        </input>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-title">Q&nbsp;&nbsp;Q:</span>
+                        <input id="qq" class="inp inw" type="text" name="qq" size="20">
+                        </input>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-title">身&nbsp;&nbsp;份:</span>
+                        <input id="status" class="status-radio" type="radio" name="is-student" value="0" checked>学生
+                        </input>
+                        <input id="status" class="status-radio" type="radio" name="is-student" value="0">其他
+                        </input>
+                    </div>
+                    <div>
+                         <input id="info-btn" class="info-btns" type="button" style="width:110px;height:34px;" checked="checked" value="确定"></input>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% else %}
 	<div class="content">
 		{%  if errors %}
 		<div class="errors">
 			<ul>
 			{% for error in errors%}
 				<li>{{error}}</li>
-			{% endfor%}
+			{% endfor %}
 			</ul>
 		</div>
-		{% endif%}
+		{% endif %}
 		<form id="reg-form" action="/regAction/" method="post" name="register-form">
 			<!-- {% csrf_token %} -->
 			<div class="regform-body">
@@ -107,6 +165,7 @@
 			</div>					
 		</form>
 	</div>
+     {% endif %}
 	<div class="footer"></div>
 </body>
 </html>

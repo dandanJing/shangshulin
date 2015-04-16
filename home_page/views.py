@@ -88,8 +88,8 @@ def regAction(request):
 				user.mobilephone = phone
 			user.is_active = True
 			user.save()
-			request.user = user
-			return index(request)
+			#request.user = user
+			return render_to_response('reg/index.html',{'user':user})
 
 	print errors
 	return render_to_response('reg/index.html',{'errors':errors})

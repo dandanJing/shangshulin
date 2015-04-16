@@ -18,7 +18,7 @@ $(document).ready(function(){
 	$("#username").focus(function(){
 		$("#username_Tip").removeAttr("class");
 		$("#username_Tip").toggleClass("action");
-		$("#username_Tip").children().html("4-20位,注册成功后用户名不能修改");
+		$("#username_Tip").children().html("1-20位,注册成功后用户名不能修改");
 	});
 
 	$("#username").blur(function(){
@@ -86,7 +86,7 @@ function vfname(){
 	var text = $("#username").val();
 
 	//检查用户名长度
-	if(!(text.length>=4 && text.length<=20)){
+	if(!(text.length>=1 && text.length<=20)){
 		change_username({'result':false,'wrong_msg':"用户名无效"});
 		return false;
 	}

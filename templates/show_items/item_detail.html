@@ -117,7 +117,7 @@
     			</div>
     			<div class="item-imgs">
     				<div class="item_image" id ="show-img">
-    					<span><img src="/static/images/good_items/{{item_images.0.itemimageurl}}"></span>
+    					<span><img src="http://shangshulin.oss-cn-beijing.aliyuncs.com/ssl-items/{{item_detail.0.itemType}}/{{item_detail.0.itemimageurl}}"></span>
     				</div>
     				<div class="item_thumb">
     					<a href="#" id="img_scrollLeft" class="icon_left"></a>
@@ -125,7 +125,7 @@
     					<div class="thumb_main">
     						<ul class="imgs_small" id = "small-imgs">
                                 {% for image_each in item_images %}
-    							<li><img src="/static/images/good_items/{{image_each.itemimageurl}}"></li>
+    							<li><img src="http://shangshulin.oss-cn-beijing.aliyuncs.com/ssl-items/{{item_detail.0.itemType}}/{{image_each.itemimageurl}}"></li>
                                 {% endfor %}
     						</ul>
     					</div>

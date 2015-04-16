@@ -3,7 +3,6 @@ from django.shortcuts import render_to_response
 from home_page.models import user_items_table
 from home_page.models import ssl_table
 from home_page.models import ssl_images_table
-from home_page.models import ssl_en_table
 from home_page.models import ssl_users
 from django.http import HttpResponseRedirect
 from datetime import datetime
@@ -16,8 +15,8 @@ from wtforms import Form, BooleanField, TextField, PasswordField, validators
 
 # Create your views here.
 def index(request):
-    good_booklist = ssl_table.objects.all()
-    ssl_en_list = ssl_en_table.objects.all()
+    good_booklist = ssl_table.objects.order_by('lookCount')[:5]
+    ssl_en_list = ssl_table.objects.filter(itemType="en")
     if request.user.is_authenticated():
     	#print 'authenticate'
     	return render_to_response('index.html',{'good_book_list':good_booklist,'ssl_en_list':ssl_en_list,'login_user':request.user.username})

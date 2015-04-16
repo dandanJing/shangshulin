@@ -29,15 +29,7 @@ class ssl_table(models.Model):
 	isBlock = models.BooleanField('isBlock', default=True)
 	username = models.CharField('username',max_length=100,default="尚书林")
 	feature = models.CharField('feature',max_length=100,default="全新")
-
-class ssl_en_table(models.Model):
-	itemid = models.CharField('itemId',max_length=100, unique=True)
-	itemname = models.CharField('itemName',max_length=100)
-	itemcostprice = models.IntegerField('itemCostPrice')
-	itemprice = models.IntegerField('itemPrice')
-	itemsnum = models.IntegerField('itemsNum')
-	itemimageurl = models.CharField('itemImageUrl',max_length=200)
-	itemimagetable = models.CharField('itemImageTable',max_length=100)
+	itemType = models.CharField('itemType',max_length=20,default="")
 
 class ssl_users(AbstractUser):
 	mobilephone = models.CharField('mobilephone',max_length=20,default="")

@@ -146,7 +146,10 @@ def show_item_detail(request):
 			item_data[0].lookCount=item_data[0].lookCount+1
 			item_data[0].save()
 			seller = ssl_users.objects.filter(username=item_data[0].username)
-			return render_to_response('show_items/item_detail.html',{'item_detail':item_data,'login_user':user,'seller':seller,'mobilephone':int(seller[0].mobilephone)/10000,'item_images':item_images})
+			is_owner = False
+			if seller[0].username == user.username:
+				is_owner = True
+			return render_to_response('show_items/item_detail.html',{'item_detail':item_data,'login_user':user,'seller':seller,'mobilephone':int(seller[0].mobilephone)/10000,'item_images':item_images,"is_owner":is_owner})
 	return render_to_response('index.html')
 
 class RegistrationForm(Form):
